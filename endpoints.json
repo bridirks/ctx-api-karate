@@ -1,0 +1,675 @@
+{
+  "helptext.extra.ROOT": {
+    "path": "api",
+    "code": "200",
+    "port": "8082",
+    "name": "helptext.extra.ROOT",
+    "params": {}
+  },
+  "search.chemical.extra-example.start-with/jwh 007": {
+    "path": "search/chemical/start-with/jwh 007",
+    "code": "200",
+    "port": "8090",
+    "name": "search.chemical.extra-example.start-with/jwh 007",
+    "params": {}
+  },
+  "exposure./product-cat-keyword/search/by-dtxsid": {
+    "path": "api/product-cat-keyword/search/by-dtxsid",
+    "code": "200",
+    "port": "8078",
+    "name": "exposure./product-cat-keyword/search/by-dtxsid",
+    "params": {
+      "id": "DTXSID7020182"
+    }
+  },
+  "download.extra.ROOT": {
+    "path": "api",
+    "code": "200",
+    "port": "8082",
+    "name": "download.extra.ROOT",
+    "params": {}
+  },
+  "assay-lists.assay-list-details/search/by-endpointname": {
+    "path": "api/assay-list-details/search/by-endpointname",
+    "code": "200",
+    "port": "8066",
+    "name": "assay-lists.assay-list-details/search/by-endpointname",
+    "params": {
+      "name": "ACEA_ER_80hr"
+    }
+  },
+  "msready.ms-ready/search/by-dtxcid": {
+    "path": "api/ms-ready/search/by-dtxcid",
+    "code": "200",
+    "port": "8088",
+    "name": "msready.ms-ready/search/by-dtxcid",
+    "params": {
+      "id": "DTXCID90488191"
+    }
+  },
+  "search.chemical.search/start-with": {
+    "path": "search/chemical/start-with/ACE",
+    "code": "200",
+    "port": "8090",
+    "name": "search.chemical.search/start-with",
+    "params": {}
+  },
+  "chemical-image.extra.chemical-image": {
+    "path": "api/chemical-image",
+    "code": "200",
+    "port": "8076",
+    "name": "chemical-image.extra.chemical-image",
+    "params": {}
+  },
+  "adme.adme/search/by-dtxsid": {
+    "path": "api/adme/search/by-dtxsid",
+    "code": "200",
+    "port": "8074",
+    "name": "adme.adme/search/by-dtxsid",
+    "params": {
+      "id": "DTXSID0020020"
+    }
+  },
+  "chemical-detail.extra.chemical-detail": {
+    "path": "api/chemical-detail",
+    "code": "200",
+    "port": "8076",
+    "name": "chemical-detail.extra.chemical-detail",
+    "params": {}
+  },
+  "chemical-list.extra.chemical-list-details": {
+    "path": "api/chemical-list-details",
+    "code": "200",
+    "port": "8064",
+    "name": "chemical-list.extra.chemical-list-details",
+    "params": {}
+  },
+  "search.chemical.search/contains": {
+    "path": "search/chemical/contain/BPA",
+    "code": "200",
+    "port": "8090",
+    "name": "search.chemical.search/contains",
+    "params": {}
+  },
+  "exposure.extra.exposure-monitoring": {
+    "path": "api/exposure-monitoring",
+    "code": "200",
+    "port": "8078",
+    "name": "exposure.extra.exposure-monitoring",
+    "params": {}
+  },
+  "news.extra.ROOT": {
+    "path": "api",
+    "code": "200",
+    "port": "8082",
+    "name": "news.extra.ROOT",
+    "params": {}
+  },
+  "search.advance.formula-exact.search/formula/exact": {
+    "path": "search/formula/exact/C15H16O2",
+    "code": "200",
+    "port": "8090",
+    "name": "search.advance.formula-exact.search/formula/exact",
+    "params": {}
+  },
+  "search.advance.list.with-range": {
+    "path": "search/formula/validate/C6H(8-10)O(0-2)",
+    "code": "200",
+    "port": "8090",
+    "name": "search.advance.list.with-range",
+    "params": {}
+  },
+  "exposure.extra.exposure-prediction": {
+    "path": "api/exposure-prediction",
+    "code": "200",
+    "port": "8078",
+    "name": "exposure.extra.exposure-prediction",
+    "params": {}
+  },
+  "feedback.feedback": {
+    "path": "api/feedback",
+    "code": "200",
+    "port": "8082",
+    "name": "feedback.feedback",
+    "params": {}
+  },
+  "search.chemical.count": {
+    "path": "search/chemical/count/IISBACLAFKSPIT",
+    "code": "200",
+    "port": "8090",
+    "name": "search.chemical.count",
+    "params": {}
+  },
+  "exposure.exposure-toxic-inventory/search/by-dtxsid": {
+    "path": "api/exposure-toxic-inventory/search/by-dtxsid",
+    "code": "200",
+    "port": "8078",
+    "name": "exposure.exposure-toxic-inventory/search/by-dtxsid",
+    "params": {
+      "id": "DTXSID7020182"
+    }
+  },
+  "exposure.exposure-prediction/search/by-dtxsid": {
+    "path": "api/exposure-prediction/search/by-dtxsid",
+    "code": "200",
+    "port": "8078",
+    "name": "exposure.exposure-prediction/search/by-dtxsid",
+    "params": {
+      "id": "DTXSID7020182"
+    }
+  },
+  "tabs.extra.ROOT": {
+    "path": "api",
+    "code": "200",
+    "port": "8082",
+    "name": "tabs.extra.ROOT",
+    "params": {}
+  },
+  "chemical-links.chemical-links/search/by-dtxsid": {
+    "path": "chemical-links/search/by-dtxsid/DTXSID90985791",
+    "code": "200",
+    "port": "8092",
+    "name": "chemical-links.chemical-links/search/by-dtxsid",
+    "params": {}
+  },
+  "search.assay.search/start-with/": {
+    "path": "search/assay/start-with/ACE",
+    "code": "200",
+    "port": "8090",
+    "name": "search.assay.search/start-with/",
+    "params": {}
+  },
+  "envfate.extra.ROOT": {
+    "path": "api",
+    "code": "200",
+    "port": "8064",
+    "name": "envfate.extra.ROOT",
+    "params": {}
+  },
+  "related-substance.extra.related-substances": {
+    "path": "api/related-substances",
+    "code": "200",
+    "port": "8076",
+    "name": "related-substance.extra.related-substances",
+    "params": {}
+  },
+  "chemical-synonym.extra.chemical-synonym": {
+    "path": "api/chemical-synonym",
+    "code": "200",
+    "port": "8076",
+    "name": "chemical-synonym.extra.chemical-synonym",
+    "params": {}
+  },
+  "chemical-synonym.chemical-synonym/search/by-dtxcid": {
+    "path": "api/chemical-synonym/search/by-dtxcid",
+    "code": "200",
+    "port": "8076",
+    "name": "chemical-synonym.chemical-synonym/search/by-dtxcid",
+    "params": {
+      "id": "DTXCID30182"
+    }
+  },
+  "chemical-list.chemical-lists": {
+    "path": "api/chemical-lists",
+    "code": "200",
+    "port": "8064",
+    "name": "chemical-list.chemical-lists",
+    "params": {}
+  },
+  "helptext.helptext": {
+    "path": "api/helptext",
+    "code": "200",
+    "port": "8082",
+    "name": "helptext.helptext",
+    "params": {}
+  },
+  "exposure.extra.exposure-toxic-inventory": {
+    "path": "api/exposure-toxic-inventory",
+    "code": "200",
+    "port": "8078",
+    "name": "exposure.extra.exposure-toxic-inventory",
+    "params": {}
+  },
+  "news.news": {
+    "path": "api/news",
+    "code": "200",
+    "port": "8082",
+    "name": "news.news",
+    "params": {}
+  },
+  "search.assay.error": {
+    "path": "search/assay/start-with/ZZZZ",
+    "code": "400",
+    "port": "8090",
+    "name": "search.assay.error",
+    "params": {}
+  },
+  "download.downloads": {
+    "path": "api/downloads",
+    "code": "200",
+    "port": "8082",
+    "name": "download.downloads",
+    "params": {}
+  },
+  "exposure.extra.ROOT": {
+    "path": "api",
+    "code": "200",
+    "port": "8078",
+    "name": "exposure.extra.ROOT",
+    "params": {}
+  },
+  "search.advance.mass.search/mass": {
+    "path": "search/mass/300/300.1",
+    "code": "200",
+    "port": "8090",
+    "name": "search.advance.mass.search/mass",
+    "params": {}
+  },
+  "search.chemical.extra-example.search InChlKey": {
+    "path": "search/chemical/start-with/IISBACLAFKSPIT-UHFFFAOYSA-N",
+    "code": "200",
+    "port": "8090",
+    "name": "search.chemical.extra-example.search InChlKey",
+    "params": {}
+  },
+  "comments.extra.ROOT": {
+    "path": "api",
+    "code": "200",
+    "port": "8082",
+    "name": "comments.extra.ROOT",
+    "params": {}
+  },
+  "exposure.exposure-monitoring.search": {
+    "path": "api/exposure-monitoring/search/by-dtxsid",
+    "code": "200",
+    "port": "8078",
+    "name": "exposure.exposure-monitoring.search",
+    "params": {
+      "id": "DTXSID7020182"
+    }
+  },
+  "related-substance.extra.ROOT": {
+    "path": "api",
+    "code": "200",
+    "port": "8076",
+    "name": "related-substance.extra.ROOT",
+    "params": {}
+  },
+  "tabs.by-dtxsid": {
+    "path": "api/tabs/by-dtxsid/DTXSID7020182",
+    "code": "200",
+    "port": "8082",
+    "name": "tabs.by-dtxsid",
+    "params": {}
+  },
+  "search.advance.list.wrong-order": {
+    "path": "search/formula/validate/H(8-10)O(0-2)C6",
+    "code": "200",
+    "port": "8090",
+    "name": "search.advance.list.wrong-order",
+    "params": {}
+  },
+  "assay-lists.assay-endpoint-detail/search/by-assayName": {
+    "path": "api/assay-endpoint-detail/search/by-assayName",
+    "code": "200",
+    "port": "8066",
+    "name": "assay-lists.assay-endpoint-detail/search/by-assayName",
+    "params": {
+      "name": "ACEA_ER"
+    }
+  },
+  "feedback.extra.ROOT": {
+    "path": "api",
+    "code": "200",
+    "port": "8082",
+    "name": "feedback.extra.ROOT",
+    "params": {}
+  },
+  "chemical-image.image/by-dtxcid/": {
+    "path": "image/by-dtxcid/DTXCID202",
+    "code": "200",
+    "port": "8076",
+    "name": "chemical-image.image/by-dtxcid/",
+    "params": {}
+  },
+  "chemical-list.chemical-list-details/search/by-listname": {
+    "path": "api/chemical-list-details/search/by-listname",
+    "code": "200",
+    "port": "8064",
+    "name": "chemical-list.chemical-list-details/search/by-listname",
+    "params": {
+      "name": "40CFR355"
+    }
+  },
+  "search.advance.mass.count": {
+    "path": "search/mass/count/300/300.1",
+    "code": "200",
+    "port": "8090",
+    "name": "search.advance.mass.count",
+    "params": {}
+  },
+  "similar-compounds.by-dtxcid": {
+    "path": "similar-compounds/by-dtxcid/DTXCID30182/CC(C)(C1=CC=C(O)C=C1)C1=CC=C(O)C=C1/0.8",
+    "code": "200",
+    "port": "8084",
+    "name": "similar-compounds.by-dtxcid",
+    "params": {}
+  },
+  "assay-lists.assay-lists": {
+    "path": "api/assay-lists",
+    "code": "200",
+    "port": "8066",
+    "name": "assay-lists.assay-lists",
+    "params": {}
+  },
+  "search.chemical.error.CASRN-checksum check": {
+    "path": "search/chemical/start-with/80-05-8",
+    "code": "400",
+    "port": "8090",
+    "name": "search.chemical.error.CASRN-checksum check",
+    "params": {}
+  },
+  "search.chemical.extra-example.start-with/jwh-007": {
+    "path": "search/chemical/start-with/jwh-007",
+    "code": "200",
+    "port": "8090",
+    "name": "search.chemical.extra-example.start-with/jwh-007",
+    "params": {}
+  },
+  "hazard.extra.hazard": {
+    "path": "api/hazard",
+    "code": "200",
+    "port": "8070",
+    "name": "hazard.extra.hazard",
+    "params": {}
+  },
+  "search.chemical.extra-example.start-with/polysorbate": {
+    "path": "search/chemical/start-with/polysorbate",
+    "code": "200",
+    "port": "8090",
+    "name": "search.chemical.extra-example.start-with/polysorbate",
+    "params": {}
+  },
+  "hazard.extra.ROOT": {
+    "path": "api",
+    "code": "200",
+    "port": "8070",
+    "name": "hazard.extra.ROOT",
+    "params": {}
+  },
+  "chemical-image.extra.ROOT": {
+    "path": "api",
+    "code": "200",
+    "port": "8076",
+    "name": "chemical-image.extra.ROOT",
+    "params": {}
+  },
+  "exposure.extra.production-volume": {
+    "path": "api/production-volume",
+    "code": "200",
+    "port": "8078",
+    "name": "exposure.extra.production-volume",
+    "params": {}
+  },
+  "search.chemical.extra-example.search with spaces": {
+    "path": "search/chemical/start-with/ ACE",
+    "code": "200",
+    "port": "8090",
+    "name": "search.chemical.extra-example.search with spaces",
+    "params": {}
+  },
+  "chemical-links.extra.ROOT": {
+    "path": "chemical-links",
+    "code": "200",
+    "port": "8092",
+    "name": "chemical-links.extra.ROOT",
+    "params": {}
+  },
+  "search.chemical.search/start-with-details": {
+    "path": "search/chemical/start-with-details/IISBACLAFKSPIT",
+    "code": "200",
+    "port": "8090",
+    "name": "search.chemical.search/start-with-details",
+    "params": {}
+  },
+  "assay-lists.extra.assay-endpoint-detail": {
+    "path": "api/assay-endpoint-detail",
+    "code": "200",
+    "port": "8066",
+    "name": "assay-lists.extra.assay-endpoint-detail",
+    "params": {}
+  },
+  "search.advance.formula-msready.search/formula/msready": {
+    "path": "search/formula/msready/C15H16O2",
+    "code": "200",
+    "port": "8090",
+    "name": "search.advance.formula-msready.search/formula/msready",
+    "params": {}
+  },
+  "msready.extra.ROOT": {
+    "path": "api",
+    "code": "200",
+    "port": "8064",
+    "name": "msready.extra.ROOT",
+    "params": {}
+  },
+  "chemical-list.extra.ROOT": {
+    "path": "api",
+    "code": "200",
+    "port": "8064",
+    "name": "chemical-list.extra.ROOT",
+    "params": {}
+  },
+  "adme.extra.ROOT": {
+    "path": "api",
+    "code": "200",
+    "port": "8074",
+    "name": "adme.extra.ROOT",
+    "params": {}
+  },
+  "hazard.hazard/search/by-dtxsid": {
+    "path": "api/hazard/search/by-dtxsid",
+    "code": "200",
+    "port": "8070",
+    "name": "hazard.hazard/search/by-dtxsid",
+    "params": {
+      "id": "DTXSID7020182"
+    }
+  },
+  "search.chemical.search/equal": {
+    "path": "search/chemical/equal/DTXSID2025214",
+    "code": "200",
+    "port": "8090",
+    "name": "search.chemical.search/equal",
+    "params": {}
+  },
+  "chemical-detail.chemical-detail/search/by-dsstoxsid": {
+    "path": "api/chemical-detail/search/by-dsstoxsid",
+    "code": "200",
+    "port": "8076",
+    "name": "chemical-detail.chemical-detail/search/by-dsstoxsid",
+    "params": {
+      "id": "DTXSID7020182"
+    }
+  },
+  "related-substance.related-substances/search/by-dtxsid": {
+    "path": "api/related-substances/search/by-dtxsid",
+    "code": "200",
+    "port": "8076",
+    "name": "related-substance.related-substances/search/by-dtxsid",
+    "params": {
+      "id": "DTXSID7020182"
+    }
+  },
+  "chemical-links.extra.links": {
+    "path": "chemical-links/links",
+    "code": "200",
+    "port": "8092",
+    "name": "chemical-links.extra.links",
+    "params": {}
+  },
+  "chemical-property.extra.ROOT": {
+    "path": "api",
+    "code": "200",
+    "port": "8068",
+    "name": "chemical-property.extra.ROOT",
+    "params": {}
+  },
+  "envfate.envfate/search/by-dtxsid": {
+    "path": "api/envfate/search/by-dtxsid",
+    "code": "200",
+    "port": "8072",
+    "name": "envfate.envfate/search/by-dtxsid",
+    "params": {
+      "id": "DTXSID7020182"
+    }
+  },
+  "search.chemical.error.InChlKey-Error": {
+    "path": "chemical/search/start-with/IISBACLAFKSPIg",
+    "code": "400",
+    "port": "8090",
+    "name": "search.chemical.error.InChlKey-Error",
+    "params": {}
+  },
+  "search.advance.list.list": {
+    "path": "search/formula/validate/C15H16O2",
+    "code": "200",
+    "port": "8090",
+    "name": "search.advance.list.list",
+    "params": {}
+  },
+  "chemical-synonym.extra.ROOT": {
+    "path": "api",
+    "code": "200",
+    "port": "8076",
+    "name": "chemical-synonym.extra.ROOT",
+    "params": {}
+  },
+  "envfate.extra.envfate": {
+    "path": "api/envfate",
+    "code": "200",
+    "port": "8072",
+    "name": "envfate.extra.envfate",
+    "params": {}
+  },
+  "chemical-property.extra.chemical-property": {
+    "path": "api/chemical-property",
+    "code": "200",
+    "port": "8068",
+    "name": "chemical-property.extra.chemical-property",
+    "params": {}
+  },
+  "similar-compounds.count-by-dtxcid/": {
+    "path": "similar-compounds/count-by-dtxcid/DTXCID30182/CC(C)(C1=CC=C(O)C=C1)C1=CC=C(O)C=C1",
+    "code": "200",
+    "port": "8084",
+    "name": "similar-compounds.count-by-dtxcid/",
+    "params": {}
+  },
+  "chemical-image.image/by-dtxsid/": {
+    "path": "image/by-dtxsid/DTXSID7020182",
+    "code": "200",
+    "port": "8076",
+    "name": "chemical-image.image/by-dtxsid/",
+    "params": {}
+  },
+  "msready.extra.ms-ready": {
+    "path": "api/ms-ready",
+    "code": "200",
+    "port": "8088",
+    "name": "msready.extra.ms-ready",
+    "params": {}
+  },
+  "chemical-detail.extra.ROOT": {
+    "path": "api",
+    "code": "200",
+    "port": "8076",
+    "name": "chemical-detail.extra.ROOT",
+    "params": {}
+  },
+  "comments.comments/search/by-dtxsid": {
+    "path": "api/comments/search/by-dtxsid",
+    "code": "200",
+    "port": "8082",
+    "name": "comments.comments/search/by-dtxsid",
+    "params": {
+      "id": "DTXSID7020182"
+    }
+  },
+  "exposure.product-cat-puc/search/by-dtxsid": {
+    "path": "api/product-cat-puc/search/by-dtxsid",
+    "code": "200",
+    "port": "8078",
+    "name": "exposure.product-cat-puc/search/by-dtxsid",
+    "params": {
+      "id": "DTXSID7020182"
+    }
+  },
+  "chemical-property.chemical-property/search/by-dtxsid": {
+    "path": "api/chemical-property/search/by-dtxsid",
+    "code": "200",
+    "port": "8068",
+    "name": "chemical-property.chemical-property/search/by-dtxsid",
+    "params": {
+      "id": "DTXSID7020182"
+    }
+  },
+  "exposure.production-volume/search/by-dtxsid": {
+    "path": "api/production-volume/search/by-dtxsid",
+    "code": "200",
+    "port": "8078",
+    "name": "exposure.production-volume/search/by-dtxsid",
+    "params": {
+      "id": "DTXSID7020182"
+    }
+  },
+  "search.chemical.search/contains-with-details": {
+    "path": "search/chemical/contain-with-details/BPA",
+    "code": "200",
+    "port": "8090",
+    "name": "search.chemical.search/contains-with-details",
+    "params": {}
+  },
+  "comments.comments": {
+    "path": "api/comments",
+    "code": "200",
+    "port": "8082",
+    "name": "comments.comments",
+    "params": {}
+  },
+  "search.chemical.extra-example.casrn  (80-05-7) search": {
+    "path": "search/chemical/start-with/80-05-7",
+    "code": "200",
+    "port": "8090",
+    "name": "search.chemical.extra-example.casrn  (80-05-7) search",
+    "params": {}
+  },
+  "adme.extra.adme": {
+    "path": "api/adme",
+    "code": "200",
+    "port": "8074",
+    "name": "adme.extra.adme",
+    "params": {}
+  },
+  "assay-lists.extra.assay-list-details": {
+    "path": "api/assay-list-details",
+    "code": "200",
+    "port": "8066",
+    "name": "assay-lists.extra.assay-list-details",
+    "params": {}
+  },
+  "chemical-links.extra.ids": {
+    "path": "chemical-links/ids",
+    "code": "200",
+    "port": "8092",
+    "name": "chemical-links.extra.ids",
+    "params": {}
+  },
+  "assay-lists.extra.ROOT": {
+    "path": "api",
+    "code": "200",
+    "port": "8064",
+    "name": "assay-lists.extra.ROOT",
+    "params": {}
+  }
+}
