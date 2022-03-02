@@ -11,13 +11,13 @@ function() {
   // base config
   var config = {
 	env: env,
-    baseUrl: 'http://ccte-api-rapidtox-dev.epa.gov',
+    baseUrl: 'https://ccte-api-rapidtox-dev.epa.gov',
     apiKey: ''
   }
   //switch environment
   if (env == 'dev')
   {
-    config.baseUrl = 'http://ccte-api-rapidtox-dev.epa.gov';
+    config.baseUrl = 'https://ccte-api-rapidtox-dev.epa.gov';
     config.apiKey  = 'fake-1ba403ca8938176f3a62de6d30cfb8e';
   }
 	karate.log('baseurl: ',config.baseUrl);

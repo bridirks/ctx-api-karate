@@ -1,4 +1,4 @@
-Feature: Feature file session recall
+Feature: Feature file for session recall
 
   Scenario: Testing the GET method for session-recall
     Given url baseUrl + '/rapidtox/session-recall'
