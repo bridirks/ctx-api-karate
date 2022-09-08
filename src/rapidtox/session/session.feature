@@ -1,15 +1,10 @@
 Feature: Feature file for session recall
 
-  Background: 
+  Background:
   * def sessionRequest = {'username':'testuser', 'sessionTitle': 'testSession'}
   * def sessionUpdate = {'activeTab': 'pod', 'tabName': 'pod', 'tabData': '{podData: data}', 'sessionKey': '06c358f67fcbbcdf017fcc8c2c830000'}
   Scenario: Testing the GET method for session-recall
     Given url baseUrl + '/rapidtox/session-recall'
-    When method GET
-    Then status 200
-
-  Scenario: Testing the GET method for session-recall by id
-    Given url baseUrl + '/rapidtox/session-recall/06c358f67f1dbc35017f1dc254850000'
     When method GET
     Then status 200
 
@@ -24,11 +19,4 @@ Feature: Feature file for session recall
     When method POST
     Then status 201
     And response.sessionKey != null
-  
-  Scenario: Testing the POST method for updating an existing session
-    Given url baseUrl + '/rapidtox/session-recall/update'
-    And request sessionUpdate
-    When method POST
-    Then status 200
-    And response.activeTab == 'pod'
 
