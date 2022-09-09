@@ -1,6 +1,5 @@
 function() {
     var env = karate.env; // get java system property 'karate.env'
-    var app = java.lang.System.getenv('TEST_APP');
 
     karate.log('karate.env selected environment was:', env);
     karate.configure("ssl", true)
