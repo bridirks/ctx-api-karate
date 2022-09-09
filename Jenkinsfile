@@ -24,7 +24,7 @@ pipeline {
     timestamps();
     disableConcurrentBuilds();
     office365ConnectorWebhooks([
-       [name: "karate-testing", url: "NEED THIS INFORMATION", startNotification: true, notifyBackToNormal: true, notifyFailure: true, notifyRepeatedFailure: true, notifySuccess: true, notifyAborted: true]
+       [name: "karate-testing", url: "https://usepa.webhook.office.com/webhookb2/52666a1b-6ebc-415a-8066-05f621f63b23@88b378b3-6748-4867-acf9-76aacbeca6a7/IncomingWebhook/ae355b01a615454d9a2fe71a7e010544/48636d5a-2386-4753-ba37-3e8816a8313c", startNotification: true, notifyBackToNormal: true, notifyFailure: true, notifyRepeatedFailure: true, notifySuccess: true, notifyAborted: true]
     ])
   }
 
@@ -46,30 +46,91 @@ pipeline {
         }
       steps {
         sh '''cd /data/code/api-testing/karate-testing
-               docker build --build-arg APP_ENV=dev -t karate-testing .
+               docker build --build-arg APP_ENV=''' + agentLabel + ''' -t karate-testing:$BUILD_NUMBER .
               '''
         }
      }
 
-    stage('Remove Old Containers'){
-      when { expression { env.BRANCH_NAME ==~ /(dev|staging|main)/ }
-        }
-      steps {
-        sh '''cd /data/code/impact/impact2api
-              docker-compose down
-              '''
-        }
-    }
+    stage('Copy Images') {
+           steps {
+              script {
+                        if ( env.BRANCH_NAME == "main" ){
+                             sh '''cd /data/jenkins-agent
+                                   docker save -o karate-testing-$BUILD_NUMBER.tar karate-testing:$BUILD_NUMBER
+                                   scp karate-testing-$BUILD_NUMBER.tar fahrenheit.epa.gov:~
+                                   scp karate-testing-$BUILD_NUMBER.tar zeus.epa.gov:~
+                                '''
+                        } else if ( env.BRANCH_NAME == "dev" ) {
+                                    sh '''cd /data/jenkins-agent
+                                          docker save -o karate-testing-$BUILD_NUMBER.tar karate-testing:$BUILD_NUMBER
+                                          scp karate-testing-$BUILD_NUMBER.tar dust.epa.gov:~
+                                          scp karate-testing-$BUILD_NUMBER.tar drax.epa.gov:~
+                                       '''
+                          }  else if ( env.BRANCH_NAME == "staging" ) {
+                                       sh '''cd /data/jenkins-agent
+                                             docker save -o karate-testing-$BUILD_NUMBER.tar karate-testing:$BUILD_NUMBER
+                                             scp karate-testing-$BUILD_NUMBER.tar spot.epa.gov:~
+                                             scp karate-testing-$BUILD_NUMBER.tar salo.epa.gov:~
+                                          '''
+                             }
+                       }
+                    }
+         }
 
-    stage('Deploy') {
-      when { expression { env.BRANCH_NAME ==~ /(dev|staging|main)/ }
-        }
-      steps {
-        sh '''id
-              hostname
-              cd /data/code/impact/impact2api
-              docker-compose up -d'''
-        }
-      }
-  }
+        stage('Load Images'){
+          steps {
+            script {
+                   if ( env.BRANCH_NAME == "main" ){
+                        sh '''cd /data/jenkins-agent
+                              ssh zeus.epa.gov docker load -i karate-testing-$BUILD_NUMBER.tar
+                              ssh fahrenheit.epa.gov docker load -i karate-testing-$BUILD_NUMBER.tar
+                           '''
+                   } else if ( env.BRANCH_NAME == "dev" ) {
+                               sh '''cd /data/jenkins-agent
+                                     ssh dust.epa.gov docker load -i karate-testing-$BUILD_NUMBER.tar
+                                     ssh drax.epa.gov docker load -i karate-testing-$BUILD_NUMBER.tar
+                                  '''
+                     } else if ( env.BRANCH_NAME == "staging" ) {
+                                 sh '''cd /data/jenkins-agent
+                                       ssh spot.epa.gov docker load -i karate-testing-$BUILD_NUMBER.tar
+                                       ssh salo.epa.gov docker load -i karate-testing-$BUILD_NUMBER.tar
+                                    '''
+                       }
+                  }
+                }
+         }
+
+       stage('Clean') {
+          steps {
+            script {
+                   if ( env.BRANCH_NAME == "main" ){
+                        sh '''ssh fahrenheit.epa.gov rm karate-testing-$BUILD_NUMBER.tar
+                              ssh zeus.epa.gov rm karate-testing-$BUILD_NUMBER.tar
+                           '''
+                   } else if ( env.BRANCH_NAME == "dev" ) {
+                               sh '''ssh dust.epa.gov rm karate-testing-$BUILD_NUMBER.tar
+                                     ssh drax.epa.gov rm karate-testing-$BUILD_NUMBER.tar
+                                  '''
+                     } else if ( env.BRANCH_NAME == "staging" ) {
+                                                   sh '''ssh spot.epa.gov rm karate-testing-$BUILD_NUMBER.tar
+                                                         ssh salo.epa.gov rm karate-testing-$BUILD_NUMBER.tar
+                                                      '''
+                       }
+                   }
+                }
+         }
+
+        stage('Deploy') {
+          steps {
+            script {
+                    if ( env.BRANCH_NAME == "dev" || env.BRANCH_NAME == "staging" || env.BRANCH_NAME == "main" ){
+                         sh '''#!/bin/bash
+                               docker service update --image karate-testing:$BUILD_NUMBER karate-testing
+                            '''
+                     }
+                   }
+              }
+         }
+
+     }
 }
