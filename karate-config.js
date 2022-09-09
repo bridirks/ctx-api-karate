@@ -12,13 +12,13 @@ function() {
   // base config
   var config = {
 	env: env,
-    baseUrl: `https://ccte-api-${app}-${env}.epa.gov`,
+    rapidtox: `https://ccte-api-rapidtox-${env}.epa.gov`,
     apiKey: ''
   }
   //switch environment
   if (env == 'dev')
   {
-    config.baseUrl = `https://ccte-api-${app}-${env}.epa.gov`;
+    config.rapidtox = `https://ccte-api-rapidtox-${env}.epa.gov`;
     config.apiKey  = 'fake-1ba403ca8938176f3a62de6d30cfb8e';
   }
 	karate.log('baseurl: ',config.baseUrl);

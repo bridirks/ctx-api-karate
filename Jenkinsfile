@@ -2,15 +2,12 @@
 def agentLabel
 if ( env.BRANCH_NAME == 'main') {
   agentLabel = 'prod'
-  karate.env = 'ip'
 } else if ( env.BRANCH_NAME == 'staging') {
   agentLabel = 'stg'
-  karate.env = 'stg'
 } else if ( env.BRANCH_NAME == 'dev') {
   agentLabel = 'dev'
-  karate.env = 'dev'
 } else {
-  // if not part of dev, staging, or main we are not going through the pipeline
+// if not part of dev, release, or prod we are not going through the pipeline
   agentLabel = 'test'
 }
 
@@ -22,60 +19,57 @@ pipeline {
   triggers {
         pollSCM 'H/5 * * * *'
     }
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '5'));
+    timestamps();
+    disableConcurrentBuilds();
+    office365ConnectorWebhooks([
+       [name: "karate-testing", url: "NEED THIS INFORMATION", startNotification: true, notifyBackToNormal: true, notifyFailure: true, notifyRepeatedFailure: true, notifySuccess: true, notifyAborted: true]
+    ])
+  }
+
   // Stages
   stages {
 
-    stage('Signal Pipeline Start') {
-      steps {
-        slackSend channel: '#proj-dashboard-devops',
-                  color: 'good',
-                  message: "Starting karate tests ${env.BUILD_NUMBER} on ${env.karate.env} @ ${env.BUILD_URL}"
-      }
-    }
-
-    stage('configure tests'){
+    stage('Source Code'){
       when { expression { env.BRANCH_NAME ==~ /(dev|staging|main)/ }
       }
       steps {
-        sh '''cd /data/code/ccd/api-tests
-              git branch
+        sh '''cd /data/code/api-testing/karate-testing
               git pull
               '''
         }
-    }
+      }
 
-    stage('run tests') {
+    stage('Build') {
       when { expression { env.BRANCH_NAME ==~ /(dev|staging|main)/ }
-        } 
+        }
       steps {
-        sh '''cd /data/code/ccd/api-tests
-              rm -rf target
-              ./karate -e ${env.karate.env} src/ccd-dashboard
+        sh '''cd /data/code/api-testing/karate-testing
+               docker build --build-arg APP_ENV=dev -t karate-testing .
               '''
         }
-     }  
-    
-    stage('process results'){
+     }
+
+    stage('Remove Old Containers'){
       when { expression { env.BRANCH_NAME ==~ /(dev|staging|main)/ }
-        } 
+        }
       steps {
-        sh '''cd /data/code/ccd/api-image/target/karate-reports             
-              ll
+        sh '''cd /data/code/impact/impact2api
+              docker-compose down
               '''
         }
     }
 
+    stage('Deploy') {
+      when { expression { env.BRANCH_NAME ==~ /(dev|staging|main)/ }
+        }
+      steps {
+        sh '''id
+              hostname
+              cd /data/code/impact/impact2api
+              docker-compose up -d'''
+        }
+      }
   }
-  post {
-      success {
-        slackSend channel: '#proj-dashboard-devops',
-                  color: 'good',
-                  message: "Successfully ran tests ${env.BUILD_NUMBER} on ${env.karate.env} @ ${env.BUILD_URL}"
-                }
-      failure { 
-        slackSend channel: '#proj-dashboard-devops',
-                  color: 'danger',
-                  message: "Something is wrong with tests ${env.BUILD_NUMBER} on ${env.karate.env} @ ${env.BUILD_URL}"
-                }
-    }
 }

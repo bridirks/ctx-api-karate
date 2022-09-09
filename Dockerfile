@@ -4,11 +4,9 @@ COPY . /app
 
 WORKDIR /app
 
-ARG TEST_APP
+ARG APP_ENV
 
-ENV TEST_APP=$TEST_APP
-
-RUN sh /app/karate -e dev --output rapidtox src/rapidtox
+RUN sh /app/karate -e $APP_ENV --output rapidtox src/rapidtox
 
 FROM httpd:2.4
 
