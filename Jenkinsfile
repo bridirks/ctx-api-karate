@@ -124,9 +124,14 @@ pipeline {
           steps {
             script {
                     if ( env.BRANCH_NAME == "dev" || env.BRANCH_NAME == "staging" || env.BRANCH_NAME == "main" ){
-                         sh '''#!/bin/bash
-                               docker service update --image karate-testing:$BUILD_NUMBER karate-testing
-                            '''
+                        sh '''#!/bin/bash
+                              dockexist=`docker service ls | grep -i karate-testing`
+                              if [[ -z ${dockexist} ]]; then
+                                  docker service create --replicas 3 --name karate-testing --update-delay 10s --publish published=2900,target=2900 karate-testing:$BUILD_NUMBER
+                              else
+                                  docker service update --image karate-testing:$BUILD_NUMBER karate-testing
+                              fi
+                           '''
                      }
                    }
               }
