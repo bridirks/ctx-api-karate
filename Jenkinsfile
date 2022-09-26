@@ -51,91 +51,21 @@ pipeline {
         }
      }
 
-    stage('Copy Images') {
-           steps {
-              script {
-                        if ( env.BRANCH_NAME == "main" ){
-                             sh '''cd /data/jenkins-agent
-                                   docker save -o karate-testing-$BUILD_NUMBER.tar karate-testing:$BUILD_NUMBER
-                                   scp karate-testing-$BUILD_NUMBER.tar fahrenheit.epa.gov:~
-                                   scp karate-testing-$BUILD_NUMBER.tar zeus.epa.gov:~
-                                '''
-                        } else if ( env.BRANCH_NAME == "dev" ) {
-                                    sh '''cd /data/jenkins-agent
-                                          docker save -o karate-testing-$BUILD_NUMBER.tar karate-testing:$BUILD_NUMBER
-                                          scp karate-testing-$BUILD_NUMBER.tar dust.epa.gov:~
-                                          scp karate-testing-$BUILD_NUMBER.tar drax.epa.gov:~
-                                       '''
-                          }  else if ( env.BRANCH_NAME == "staging" ) {
-                                       sh '''cd /data/jenkins-agent
-                                             docker save -o karate-testing-$BUILD_NUMBER.tar karate-testing:$BUILD_NUMBER
-                                             scp karate-testing-$BUILD_NUMBER.tar spot.epa.gov:~
-                                             scp karate-testing-$BUILD_NUMBER.tar salo.epa.gov:~
-                                          '''
-                             }
-                       }
-                    }
-         }
-
-        stage('Load Images'){
-          steps {
-            script {
-                   if ( env.BRANCH_NAME == "main" ){
-                        sh '''cd /data/jenkins-agent
-                              ssh zeus.epa.gov docker load -i karate-testing-$BUILD_NUMBER.tar
-                              ssh fahrenheit.epa.gov docker load -i karate-testing-$BUILD_NUMBER.tar
-                           '''
-                   } else if ( env.BRANCH_NAME == "dev" ) {
-                               sh '''cd /data/jenkins-agent
-                                     ssh dust.epa.gov docker load -i karate-testing-$BUILD_NUMBER.tar
-                                     ssh drax.epa.gov docker load -i karate-testing-$BUILD_NUMBER.tar
-                                  '''
-                     } else if ( env.BRANCH_NAME == "staging" ) {
-                                 sh '''cd /data/jenkins-agent
-                                       ssh spot.epa.gov docker load -i karate-testing-$BUILD_NUMBER.tar
-                                       ssh salo.epa.gov docker load -i karate-testing-$BUILD_NUMBER.tar
-                                    '''
-                       }
-                  }
-                }
-         }
-
-       stage('Clean') {
-          steps {
-            script {
-                   if ( env.BRANCH_NAME == "main" ){
-                        sh '''ssh fahrenheit.epa.gov rm karate-testing-$BUILD_NUMBER.tar
-                              ssh zeus.epa.gov rm karate-testing-$BUILD_NUMBER.tar
-                           '''
-                   } else if ( env.BRANCH_NAME == "dev" ) {
-                               sh '''ssh dust.epa.gov rm karate-testing-$BUILD_NUMBER.tar
-                                     ssh drax.epa.gov rm karate-testing-$BUILD_NUMBER.tar
-                                  '''
-                     } else if ( env.BRANCH_NAME == "staging" ) {
-                                                   sh '''ssh spot.epa.gov rm karate-testing-$BUILD_NUMBER.tar
-                                                         ssh salo.epa.gov rm karate-testing-$BUILD_NUMBER.tar
-                                                      '''
-                       }
-                   }
-                }
-         }
-
         stage('Deploy') {
+          when { expression { env.BRANCH_NAME ==~ /(dev|staging|main)/ }
+            }
           steps {
-            script {
-                    if ( env.BRANCH_NAME == "dev" || env.BRANCH_NAME == "staging" || env.BRANCH_NAME == "main" ){
-                        sh '''#!/bin/bash
-                              dockexist=`docker service ls | grep -i karate-testing`
-                              if [[ -z ${dockexist} ]]; then
-                                  docker service create --replicas 3 --name karate-testing --update-delay 10s --publish published=2900,target=2900 karate-testing:$BUILD_NUMBER
-                              else
-                                  docker service update --image karate-testing:$BUILD_NUMBER karate-testing
-                              fi
-                           '''
-                     }
-                   }
-              }
-         }
-
-     }
+             sh(returnStdout: true, script: '''#!/bin/bash
+                cd /data/code/api-testing/karate-testing
+                if [[ $(docker ps -a | grep -i karate-testing) ]];then
+	            docker stop karate-testing
+	            docker rm karate-testing
+	        else
+	            echo "karate-testing container not running .."
+                fi
+                docker run -itd -p 2900:80 --restart unless-stopped --name karate-testing karate-testing:$BUILD_NUMBER
+             '''.stripIndent())
+            }
+       }
+   }
 }
