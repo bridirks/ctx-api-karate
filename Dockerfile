@@ -12,3 +12,5 @@ FROM httpd:2.4
 
 COPY --from=build /app/rapidtox /usr/local/apache2/htdocs/rapidtox 
 COPY --from=build /app/httpd.conf /usr/local/apache2/conf/
+
+EXPOSE 80
