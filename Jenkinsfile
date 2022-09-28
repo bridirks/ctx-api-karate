@@ -46,7 +46,7 @@ pipeline {
         }
       steps {
         sh '''cd /data/code/api-testing/karate-testing
-               docker build --build-arg APP_ENV=''' + agentLabel + ''' -t karate-testing:$BUILD_NUMBER .
+               docker build -f Dockerfile  --build-arg APP_ENV=''' + agentLabel + ''' -t karate-testing:$BUILD_NUMBER .
               '''
         }
      }
