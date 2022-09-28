@@ -57,7 +57,7 @@ pipeline {
           steps {
              sh(returnStdout: true, script: '''#!/bin/bash
                 cd /data/code/api-testing/karate-testing
-                if [[ $(docker ps -a | grep -i karate-testing) ]];then
+                if [[ $(docker ps | grep -i karate-testing) ]];then
 	            docker stop karate-testing
 	            docker rm karate-testing
 	        else
