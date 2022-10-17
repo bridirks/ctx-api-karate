@@ -10,20 +10,14 @@ function() {
 
   // base config
   var config = {
-	env: env
+	env: env,
+    rapidtox: `https://ccte-api-rapidtox-${env}.epa.gov`,
+    impact: `https://ccte-api-impact-${env}.epa.gov`
   }
   //switch environment
-  if (env == 'dev')
-  {
-    config.rapidtox = `https://ccte-api-rapidtox-${env}.epa.gov`;
-  }
-  if (env == 'stg')
-  {
-    config.rapidtox = `https://ccte-api-rapidtox-${env}.epa.gov`;
-  }
   if (env == 'prod')
   {
-    config.rapidtox = `https://ccte-api-rapidtox-${env}.epa.gov`;
+    config.impact = `https://ccte-api-impact.epa.gov`
   }
 	karate.log('baseurl: ',config.baseUrl);
 
