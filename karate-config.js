@@ -10,15 +10,20 @@ function() {
 
   // base config
   var config = {
-	env: env,
-    rapidtox: `https://ccte-api-rapidtox-${env}.epa.gov`,
-    apiKey: ''
+	env: env
   }
   //switch environment
   if (env == 'dev')
   {
     config.rapidtox = `https://ccte-api-rapidtox-${env}.epa.gov`;
-    config.apiKey  = 'fake-1ba403ca8938176f3a62de6d30cfb8e';
+  }
+  if (env == 'stg')
+  {
+    config.rapidtox = `https://ccte-api-rapidtox-${env}.epa.gov`;
+  }
+  if (env == 'prod')
+  {
+    config.rapidtox = `https://ccte-api-rapidtox-${env}.epa.gov`;
   }
 	karate.log('baseurl: ',config.baseUrl);
 
