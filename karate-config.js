@@ -12,12 +12,18 @@ function() {
   var config = {
 	env: env,
     rapidtox: `https://ccte-api-rapidtox-${env}.epa.gov`,
-    impact: `https://ccte-api-impact-${env}.epa.gov`
+    impact: `https://ccte-api-impact-${env}.epa.gov`,
+    genra: `https://ccte-api-genra-${env}.epa.gov`
   }
   //switch environment
+  if (env == 'stg')
+  {
+    config.genra = `https://ccte-api-genra-${env}.epa.gov/genra-api`
+  }
   if (env == 'prod')
   {
     config.impact = `https://ccte-api-impact.epa.gov`
+    config.genra = `https://ccte-api-genra.epa.gov/genra-api`
   }
 	karate.log('baseurl: ',config.baseUrl);
 

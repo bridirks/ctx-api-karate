@@ -2,7 +2,12 @@
 
 <head>
 
+    <title>CCTE Karate Testing</title>
     <style>
+        body {
+            font-family: sans-serif;
+        }
+
         .button {
             background-color: darkblue; /* Green */
             border: 1px solid black;
@@ -16,7 +21,8 @@
             cursor: pointer;
         }
 
-        li {
+        li:not(:first-child) {
+            margin-left: 25px;
         }
     </style>
 
@@ -27,11 +33,11 @@
 <h1 style="text-align: center; width: 100%;margin-top: 200px !important;">CCTE Karate Testing</h1>
 
 <ul style="list-style: none; display: flex;justify-content: center;">
-    <li><a class="button" href="/rapidtox/karate-reports/karate-summary.html">RapidTox</a></li>
-    <li style="margin-left: 25px;"><a class="button" href="/impact/karate-reports/karate-summary.html">Impact</a></li>
-    <li style="margin-left: 25px;"><a class="button" href="/ccd/karate-reports/karate-summary.html">CCD</a></li>
-    <li style="margin-left: 25px;"><a class="button" href="/chemtrack/karate-reports/karate-summary.html">ChemTrack</a></li>
-    <li style="margin-left: 25px;"><a class="button" href="/genra/karate-reports/karate-summary.html">GenRA</a></li>
+    <li><a class="button" href="/result/rapidtox/karate-reports/karate-summary.html">RapidTox</a></li>
+    <li><a class="button" href="/result/impact/karate-reports/karate-summary.html">Impact</a></li>
+    <li><a class="button" href="/result/ccd/karate-reports/karate-summary.html">CCD</a></li>
+    <li><a class="button" href="/result/chemtrack/karate-reports/karate-summary.html">ChemTrack</a></li>
+    <li><a class="button" href="/result/genra/karate-reports/karate-summary.html">GenRA</a></li>
 </ul>
 </div>
 </body>
