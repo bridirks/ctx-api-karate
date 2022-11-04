@@ -5,7 +5,7 @@ function() {
     karate.configure("ssl", true)
 
     if (!env) {
-    env = 'dev'; //env can be anything: dev, qa, staging, etc.
+    env = 'dev'; // env can be anything: dev, qa, staging, etc.
     }
 
   // base config
@@ -15,15 +15,11 @@ function() {
     impact: `https://ccte-api-impact-${env}.epa.gov`,
     genra: `https://ccte-api-genra-${env}.epa.gov`
   }
-  //switch environment
-  if (env == 'stg')
-  {
-    config.genra = `https://ccte-api-genra-${env}.epa.gov/genra-api`
-  }
+  // switch environment
   if (env == 'prod')
   {
     config.impact = `https://ccte-api-impact.epa.gov`
-    config.genra = `https://ccte-api-genra.epa.gov/genra-api`
+    config.genra = `https://ccte-api-genra.epa.gov`
   }
 	karate.log('baseurl: ',config.baseUrl);
 
