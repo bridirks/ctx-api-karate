@@ -13,7 +13,8 @@ function() {
 	env: env,
     rapidtox: `https://ccte-api-rapidtox-${env}.epa.gov`,
     impact: `https://ccte-api-impact-${env}.epa.gov`,
-    genra: `https://ccte-api-genra-${env}.epa.gov`
+    genra: `https://ccte-api-genra-${env}.epa.gov`,
+    ccd: `https://ccte-api-ccd-${env}.epa.gov`
   }
   // switch environment
   if (env == 'prod')
