@@ -7,7 +7,7 @@ COPY . /app
 ARG APP_ENV
 
 # `|| true` so build doesn't fail when a test fails
-RUN for app in rapidtox impact genra; do \
+RUN for app in rapidtox ccd impact genra; do \
      sh /app/karate -e $APP_ENV --output result/$app src/$app || true; \
   done
 
