@@ -11,7 +11,7 @@ RUN for app in ccd; do \
      sh /app/karate -e $APP_ENV --output result/$app src/$app || true; \
   done
 
-FROM httpd:2.4.56
+FROM httpd:2.4.58
 
 COPY --from=build /app/result /usr/local/apache2/htdocs/result
 COPY --from=build /app/index.html /usr/local/apache2/htdocs/index.html
