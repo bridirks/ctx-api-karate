@@ -22,7 +22,7 @@ env:
 jobs:
   build-push:
 
-    runs-on: ubuntu-latest
+    runs-on: th883
     environment: ${{ github.head_ref || github.ref_name }}
     permissions:
       contents: read
