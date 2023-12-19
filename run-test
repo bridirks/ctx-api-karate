@@ -1,2 +1,2 @@
 #!/bin/bash
-./karate -e dev src/rapidtox
+./karate -e dev src/ccd
