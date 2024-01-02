@@ -12,7 +12,7 @@ Feature: Feature file for chemical fate resource
     Then status 200
 
   Scenario: Testing the POST method for chemical fate by batch dtxsid
-    Given path '/chemical/fate/search/by-dtxsid/'
-    And request example='["DTXSID7020182","DTXSID9020112"]'
+    Given url "https://api-ccte.epa.gov/chemical/fate/search/by-dtxsid/"
+    And request batchdtxsid
     When method POST
-    Then status 201
+    Then status 200
