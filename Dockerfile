@@ -7,7 +7,7 @@ COPY . /app
 ARG APP_ENV
 
 # `|| true` so build doesn't fail when a test fails
-RUN for app in bioactivity chemical; do \
+RUN for app in bioactivity chemical hazard; do \
      sh /app/karate -e $APP_ENV --output result/$app src/$app || true; \
   done
 
