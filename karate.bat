@@ -1,1 +1,1 @@
-java -cp karate-1.4.1.jar;. com.intuit.karate.Main %* -e dev src/ccd
+java -cp karate-1.4.1.jar;. com.intuit.karate.Main %* -e dev src/ccte-api
