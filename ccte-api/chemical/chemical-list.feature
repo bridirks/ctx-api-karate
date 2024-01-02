@@ -32,6 +32,6 @@ Feature: Feature file for chemical list resource
     Then status 200
 
   Scenario: Testing the GET method for all public lists
-    Given path '/chemical/list/'
+    Given url "https://api-ccte.epa.gov/chemical/list/"
     When method GET
     Then status 200
