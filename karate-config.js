@@ -11,10 +11,9 @@ function() {
   // base config
   var config = {
 	env: env,
-    rapidtox: `https://ccte-api-rapidtox-${env}.epa.gov`,
-    impact: `https://ccte-api-impact-${env}.epa.gov`,
-    genra: `https://ccte-api-genra-${env}.epa.gov`,
-    ccd: `https://ccte-api-ccd-${env}.epa.gov`
+    ccte: `https://api-ccte.epa.gov`,
+    apikey: `acbd706d-091d-4dc5-9230-0f4b07476bda`,
+    batchdtxsid: `["DTXSID7020182","DTXSID9020112"]`
   }
   // switch environment
   if (env == 'prod')
