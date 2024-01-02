@@ -1,0 +1,4 @@
+#!/bin/bash
+./karate ccte-api/bioactivity
+./karate ccte-api/chemical
+./karate ccte-api/hazard
