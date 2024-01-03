@@ -9,7 +9,6 @@
 <h3 align="center">Performance Testing with Karate Framework</h3>
 </div>
 <br><br>  
-original-design involves manual testing through the command line with changes implemented in the GUI
-<br><br>
-automated-design was created to run and modify the test solely through the command line interface and includes improved outputs<br>
-* These test scripts are what I will be using to try to automate in a GitHub Actions Workflow
+Karate framework follows the Cucumber style of writing the program which follows the BDD approach. The syntax is easy to understand by non-programmers. And this framework is the only API testing tool that has combined API Automation and performance testing into a single standalone tool.
+<br>
+It provides the users with the ability to execute the test cases in Parallel and perform the JSON & XML checks.
