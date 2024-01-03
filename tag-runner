@@ -1,4 +1,4 @@
-//change the tag to specify which tests to run
+#change the tag to specify which tests to run
 
 #!/bin/bash
 java -jar karate-1.4.1.jar -t @smoke ccte-api/bioactivity
