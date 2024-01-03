@@ -1,3 +1,4 @@
+@smoke
 Feature: Feature file for chemical file resource (mol)
 
   Background:
