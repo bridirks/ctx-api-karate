@@ -1,8 +1,8 @@
 #!/bin/bash
-// this creates individual html displays for each API
+//this creates individual html displays for each API
 ./karate ccte-api/bioactivity
 ./karate ccte-api/chemical
 ./karate ccte-api/hazard
 
-// this will create an html file that displays them all at once
+//this will create an html file that displays them all at once
 #./karate ccte-api
