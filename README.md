@@ -11,4 +11,4 @@
 <br><br>  
 Karate framework follows the Cucumber style of writing the program which follows the BDD approach. The syntax is easy to understand by non-programmers. And this framework is the only API testing tool that has combined API Automation and performance testing into a single standalone tool.
 <br>
-It provides the users with the ability to execute the test cases in Parallel and perform the JSON & XML checks.
+We will be using Karate to perform both smoke and regression tests on the CCTE APIs
