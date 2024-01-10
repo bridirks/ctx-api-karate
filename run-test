@@ -1,0 +1,7 @@
+#!/bin/bash
+#runs test by api and separates results
+./karate ccte-api/bioactivity
+./karate ccte-api/chemical
+./karate ccte-api/hazard
+#runs all tests together (remove #)
+#./karate ccte-api

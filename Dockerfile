@@ -8,7 +8,7 @@ ARG APP_ENV
 
 # `|| true` so build doesn't fail when a test fails
 RUN for app in bioactivity chemical hazard; do \
-     sh /app/karate -e $APP_ENV --output result/$app src/$app || true; \
+     sh /app/karate -e $APP_ENV --output result/$app ccte-api/$app || true; \
   done
 
 FROM httpd:2.4.58
