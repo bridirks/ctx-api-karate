@@ -16,12 +16,14 @@ function() {
     batchdtxsid: `["DTXSID7020182","DTXSID9020112"]`
   }
   // switch environment
-  if (env == 'prod')
+  if (env == 'stg')
   {
-    config.impact = `https://ccte-api-impact.epa.gov`
-    config.genra = `https://ccte-api-genra.epa.gov`
+    config.ccte = `https://api-ccte-stg.epa.gov`
   }
-	karate.log('baseurl: ',config.baseUrl);
+  else if (env == 'prod')
+  {
+    config.ccte = `https://api-ccte-prod.epa.gov`
+  }
 
     karate.configure('connectTimeout', 60000);
     karate.configure('readTimeout', 60000);
