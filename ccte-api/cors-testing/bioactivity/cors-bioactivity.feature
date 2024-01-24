@@ -67,4 +67,4 @@ Feature: CORS Requests
     And header Access-Control-Request-Method = 'GET'
     And header Access-Control-Request-Headers = 'access-control-allow-headers,access-control-origin'
     When method OPTIONS
-    Then status 200
+    Then status 401
