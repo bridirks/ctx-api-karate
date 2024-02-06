@@ -1,3 +1,4 @@
 #!/bin/bash
 ./karate -e prod ccte-api/security/security-chemical/security-chemical.feature
-./karate -e prod ccte-api/security/security-chemical/security-bioactivity.feature
+./karate -e prod ccte-api/security/security-bioactivity/security-bioactivity.feature
+./karate -e prod ccte-api/security/security-hazard/security-hazard.feature
