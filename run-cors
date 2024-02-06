@@ -1,2 +1,3 @@
 #!/bin/bash
 ./karate -e stg ccte-api/cors/cors-bioactivity
+./karate ccte-api/cors/cors-hazard
