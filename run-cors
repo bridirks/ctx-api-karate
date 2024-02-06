@@ -1,5 +1,5 @@
 #!/bin/bash
-./karate -e stg ccte-api/cors/cors-bioactivity.feature
-./karate ccte-api/cors/cors-hazard.feature
-./karate ccte-api/cors/cors-chemical.feature
-
+./karate -e stg ccte-api/cors-testing/cors-bioactivity.feature
+./karate ccte-api/cors-testing/cors-hazard.feature
+./karate ccte-api/cors-testing/cors-chemical.feature
+./karate -e stg ccte-api/cors-testing/cors-exposure.feature
