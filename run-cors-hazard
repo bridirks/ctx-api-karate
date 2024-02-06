@@ -1,2 +1,0 @@
-#!/bin/bash
-./karate ccte-api/cors/cors-hazard
