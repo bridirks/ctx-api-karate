@@ -1,2 +1,0 @@
-#!/bin/bash
-./karate -e stg ccte-api/cors/cors-exposure
