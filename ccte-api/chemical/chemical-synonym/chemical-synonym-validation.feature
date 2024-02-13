@@ -1,5 +1,5 @@
 @regression
-Feature: Feature file for chemical synonym
+Feature: Feature file for validating chemical synonym
 
   Background:
     * url ccte
