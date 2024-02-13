@@ -1,3 +1,4 @@
+@regression
 Feature: Feature file for validating chemical search resource
   Background:
     * url ccte
