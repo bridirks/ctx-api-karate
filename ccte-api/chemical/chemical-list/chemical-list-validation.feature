@@ -28,7 +28,7 @@ Feature: Feature file for chemical list resource
     And match $ contains {name: "#notnull"}
     
 #Need to Fix
-  Scenario: validating the response of the GET method for attributes of public lists of type "other"
+  Scenario: Validating the response of the GET method for attributes of public lists of type "other"
     Given path '/chemical/list/search/by-type/other'
     And param projection = 'chemicallistwithdtxsids'
     When method GET
@@ -48,3 +48,11 @@ Feature: Feature file for chemical list resource
     When method GET
     Then status 200
     And match $ == {"name": "ACSREAG"}
+
+#Need to Fix
+Scenario: validating the response of the GET method for attributes of public lists by name "ACSREAG"
+    Given path '/chemical/list/search/by-name/ACSREAG'
+    And param projection = 'chemicallistwithdtxsids'
+    When method GET
+    Then status 200
+    And match $ == {id: "#notnull", type: "other", label: "#notnull", longDescription: "#notnull", dtxsids: "#notnull", chemicalCount: "#notnull", createdAt: "#notnull", updatedAt: "#notnull", name: "#notnull", shortDescription: "#notnull"}
