@@ -1,5 +1,3 @@
 #!/bin/bash
-./karate -e stg ccte-api/cors-testing/cors-bioactivity.feature
-./karate ccte-api/cors-testing/cors-hazard.feature
-./karate ccte-api/cors-testing/cors-chemical.feature
-./karate -e stg ccte-api/cors-testing/cors-exposure.feature
+#bioactivity and exposure are currently run on stg and are set in their cors-testing feature file
+./karate ccte-api/cors-testing
