@@ -1,7 +1,7 @@
 Feature: CORS Requests
 
   Background:
-    * url ccte
+    * url 'https://api-ccte-stg.epa.gov'
     * header Accept = 'application/json' 
     * header Content-Type = 'application/json; charset=utf-8'
     
