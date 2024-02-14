@@ -1,5 +1,2 @@
 #!/bin/bash
-java -jar karate-1.4.1.jar -t @smoke ccte-api/bioactivity
-java -jar karate-1.4.1.jar -t @smoke ccte-api/chemical
-java -jar karate-1.4.1.jar -t @smoke ccte-api/hazard
-java -jar karate-1.4.1.jar -t @smoke ccte-api/exposure
+java -jar karate-1.4.1.jar -t @smoke ccte-api
