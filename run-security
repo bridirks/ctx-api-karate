@@ -1,5 +1,3 @@
 #!/bin/bash
-./karate -e prod ccte-api/security/security-chemical.feature
-./karate -e prod ccte-api/security/security-bioactivity.feature
-./karate -e prod ccte-api/security/security-hazard.feature
-./karate -e stg ccte-api/security/security-exposure.feature
+#exposure is currently run on stg and is set in its security feature file
+./karate -e prod ccte-api/security
