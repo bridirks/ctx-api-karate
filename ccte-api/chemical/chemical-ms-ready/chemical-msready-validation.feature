@@ -1,5 +1,5 @@
 @regression
-Feature: Feature file for validating the chemical search resource (ms ready)
+Feature: Feature file for validating the responses of the chemical search resource (ms ready)
 
   Background:
     * url ccte
