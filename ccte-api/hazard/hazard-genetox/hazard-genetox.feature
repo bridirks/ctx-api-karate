@@ -12,15 +12,15 @@ Feature: Feature file for genetox resource
     When method GET
     Then status 200
 
-  Scenario: Testing the GET method for genetox detail data by dtxsid
-    Given path '/hazard/genetox/details/search/by-dtxsid/DTXSID0021125'
-    When method GET
-    Then status 200
-
   Scenario: Testing the POST method for genetox summary data by batch dtxsid
     Given url "https://api-ccte-stg.epa.gov/hazard/genetox/summary/search/by-dtxsid/"
     And request batchdtxsid
     When method POST
+    Then status 200
+    
+  Scenario: Testing the GET method for genetox detail data by dtxsid
+    Given path '/hazard/genetox/details/search/by-dtxsid/DTXSID0021125'
+    When method GET
     Then status 200
 
   Scenario: Testing the POST method for genetox detail data by batch dtxsid
