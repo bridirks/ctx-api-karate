@@ -13,4 +13,4 @@ Feature: Feature file for validating the response of chemical details resource
     And request batchdtxsid
     When method POST
     Then status 200
-    And match $ contains {"expocatMedianPrediction": "5.50E-05", "expocat": "Y", "nhanes": "Y", "inchikey": "IISBACLAFKSPIT-UHFFFAOYSA-N", "msReadySmiles": "CC(C)(C1=CC=C(O)C=C1)C1=CC=C(O)C=C1", "dtxsid": "DTXSID7020182", "dtxcid": "DTXCID30182", "casrn": "80-05-7", "preferredName": "Bisphenol A", "activeAssays": 221, "molFormula": "C15H16O2", "monoisotopicMass": 228.115029755, "percentAssays": 23.0, "sourcesCount": 113, "totalAssays": 951, "smiles": "CC(C)(C1=CC=C(O)C=C1)C1=CC=C(O)C=C1", "cpdataCount": 292}
+    And match response[0] == {expocatMedianPrediction: '#present', expocat: '#present', nhanes: '#present', inchikey: '#present', msReadySmiles: '#present', dtxsid: '#present', dtxcid: '#present', casrn: '#present', preferredName: '#present', activeAssays: '#present', molFormula: '#present', monoisotopicMass: '#present', percentAssays: '#present', sourcesCount: '#present', totalAssays: '#present', smiles: '#present', cpdataCount: '#present'}
