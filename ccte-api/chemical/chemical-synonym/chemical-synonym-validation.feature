@@ -1,5 +1,5 @@
 @regression
-Feature: Feature file for validating chemical synonym
+Feature: Feature file for chemical synonym
 
   Background:
     * url ccte
@@ -11,4 +11,4 @@ Feature: Feature file for validating chemical synonym
     Given path '/chemical/synonym/search/by-dtxsid/DTXSID7020182'
     When method GET
     Then status 200
-    And match $ contains {pcCode: #ignore , other: #ignore , beilstein: #ignore , alternateCasrn: #ignore , valid: #ignore , good: #ignore , deletedCasrn: #ignore , dtxsid: #ignore}
+    And match response == {pcCode: '#present', other: '#present', beilstein: '#present', alternateCasrn: '#present', valid: '#present', good: '#present', deletedCasrn: '#present', dtxsid: '#present'}
