@@ -13,44 +13,45 @@ Feature: Feature file for chemical list resource
     Then status 200
     And match response == ["federal","international","other","state"]
 
-  Scenario: Validating the response of the GET method for attributes of public lists of type "other"
+  Scenario: Validating the response of the GET method for attributes of public lists by type (projection = chemicallistall)
     Given path '/chemical/list/search/by-type/other'
     And param projection = 'chemicallistall'
     When method GET
     Then status 200
     And match response[0] == {id: '#present', type: '#present', label: '#present', visibility: '#present', longDescription: '#present', chemicalCount: '#present', createdAt: '#present', updatedAt: '#present', listName: '#present', shortDescription: '#present'}
 
-  Scenario: Validating the response of the GET method for the list name attribute of public lists of type "other"
+  Scenario: Validating the response of the GET method for the list name attribute of public lists by type (projection = chemicallistname)
     Given path '/chemical/list/search/by-type/other'
     And param projection = 'chemicallistname'
     When method GET
     Then status 200
     And match response[0] == {listName: '#present'}
 
-  Scenario: Validating the response of the GET method for attributes of public lists of type "other"
+  Scenario: Validating the response of the GET method for attributes of public lists by type (projection = chemicallistwithdtxsids)
     Given path '/chemical/list/search/by-type/other'
     And param projection = 'chemicallistwithdtxsids'
     When method GET
     Then status 200
     And match response[0] == {id: '#present', type: '#present', label: '#present', visibility: '#present', longDescription: '#present', dtxsids: '#present', chemicalCount: '#present', createdAt: '#present', updatedAt: '#present', listName: '#present', shortDescription: '#present'}
 
-  Scenario: Validating the response of the GET method for attributes of public lists by name "ACSREAG"
+  Scenario: Validating the response of the GET method for attributes of public lists by name (projection = chemicallistall)
     Given path '/chemical/list/search/by-name/ACSREAG'
     And param projection = 'chemicallistall'
     When method GET
     Then status 200
     And match response == {id: '#present', type: '#present', label: '#present', visibility: '#present', longDescription: '#present', chemicalCount: '#present', createdAt: '#present', updatedAt: '#present', listName: '#present', shortDescription: '#present'}
 
-  Scenario: Validating the response of the GET method for the list name attribute in public lists by name "ACSREAG"
+  Scenario: Validating the response of the GET method for the list name attribute in public lists by name (projection = chemicallistname)
     Given path '/chemical/list/search/by-name/ACSREAG'
     And param projection = 'chemicallistname'
     When method GET
     Then status 200
     And match response == {listName: '#present'}
 
-  Scenario: validating the response of the GET method for attributes of public lists by name "ACSREAG"
+  Scenario: Validating the response of the GET method for attributes of public lists by name (projection = chemicallistwithdtxsids)
     Given path '/chemical/list/search/by-name/ACSREAG'
     And param projection = 'chemicallistwithdtxsids'
     When method GET
     Then status 200
     And match response == {id: '#present', type: '#present', label: '#present', visibility: '#present', longDescription: '#present', dtxsids: '#present', chemicalCount: '#present', createdAt: '#present', updatedAt: '#present', listName: '#present', shortDescription: '#present'}
+
