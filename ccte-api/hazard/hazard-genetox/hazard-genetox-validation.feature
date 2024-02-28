@@ -1,5 +1,5 @@
 @regression
-Feature: Feature file for genetox resource
+Feature: Feature file for validating the responses of the genetox resource
 
   Background:
     * url ccte
