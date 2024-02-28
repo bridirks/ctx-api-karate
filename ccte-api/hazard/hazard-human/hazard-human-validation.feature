@@ -1,5 +1,5 @@
 @regression
-Feature: Feature file for hazard human resource
+Feature: Feature file for validating the responses of the hazard human resource
 
   Background:
     * url ccte
