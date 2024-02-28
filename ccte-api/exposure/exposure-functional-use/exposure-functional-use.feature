@@ -1,5 +1,5 @@
 @smoke
-Feature: Feature file for exposure resource
+Feature: Feature file for exposure functional use resource
 
   Background:
     * url ccte
