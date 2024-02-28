@@ -1,5 +1,5 @@
 @regression
-Feature: Feature file for cancer summary resource
+Feature: Feature file for validating the responses of the cancer summary resource
 
   Background:
     * url ccte
