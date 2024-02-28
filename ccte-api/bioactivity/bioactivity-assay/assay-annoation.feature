@@ -1,5 +1,5 @@
 @smoke
-Feature: Feature file for bioactivity assay annotation resource
+Feature: Feature file for bioactivity resource
 
   Background:
     * url ccte
