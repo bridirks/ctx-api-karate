@@ -21,23 +21,3 @@ Feature: Feature file for exposure resource
     Given path '/exposure/functional-use/category'
     When method GET
     Then status 200
-
-  Scenario: Testing the GET method for list prescence tags
-    Given path '/exposure/list-prescence/tags'
-    When method GET
-    Then status 200
-
-  Scenario: Testing the GET method for list prescence by dtxsid
-    Given path '/exposure/list-prescence/search/by-dtxsid/DTXSID7020182'
-    When method GET
-    Then status 200  
-
-  Scenario: Testing the GET method for product data resource by dtxsid
-    Given path '/exposure/product-data/search/by-dtxsid/DTXSID7020182'
-    When method GET
-    Then status 200
-
-  Scenario: Testing the GET method for product data resource puc
-    Given path '/exposure/product-data/puc'
-    When method GET
-    Then status 200
