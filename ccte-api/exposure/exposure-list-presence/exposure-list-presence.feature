@@ -8,11 +8,11 @@ Feature: Feature file for exposure list-presence resource
     * header x-api-key = apikey
 
   Scenario: Testing the GET method for list prescence tags
-    Given path '/exposure/list-prescence/tags'
+    Given path '/exposure/list-presence/tags'
     When method GET
     Then status 200
 
   Scenario: Testing the GET method for list prescence by dtxsid
-    Given path '/exposure/list-prescence/search/by-dtxsid/DTXSID7020182'
+    Given path '/exposure/list-presence/search/by-dtxsid/DTXSID7020182'
     When method GET
     Then status 200 
