@@ -1,5 +1,5 @@
 @smoke
-Feature: Feature file for hazard human&eco resource
+Feature: Feature file for testing the hazard human&eco resource
 
   Background:
     * url ccte
