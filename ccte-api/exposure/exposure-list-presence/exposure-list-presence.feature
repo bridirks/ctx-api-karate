@@ -2,7 +2,7 @@
 Feature: Feature file for exposure list-presence resource
 
   Background:
-    * url 'https://api-ccte-stg.epa.gov'
+    * url ccte
     * header Accept = 'application/json' 
     * header Content-Type = 'application/json; charset=utf-8'
     * header x-api-key = apikey
