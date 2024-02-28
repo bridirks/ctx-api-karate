@@ -1,5 +1,5 @@
 @regression
-Feature: Feature file for validating responses of exposure resource
+Feature: Feature file for validating responses of exposure product data resource
 
   Background:
     * url ccte
