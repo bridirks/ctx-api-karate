@@ -11,46 +11,46 @@ Feature: Feature file for chemical list resource
     Given path '/chemical/list/type'
     When method GET
     Then status 200
-    And match $ == ["federal","international","other","state"]
+    And match response == ["federal","international","other","state"]
 
   Scenario: Validating the response of the GET method for attributes of public lists of type "other"
     Given path '/chemical/list/search/by-type/other'
     And param projection = 'chemicallistall'
     When method GET
     Then status 200
-    And match $ contains {id: #ignore, type: #ignore, label: #ignore, visibility: #ignore, longDescription: #ignore, chemicalCount: #ignore, createdAt: #ignore, updatedAt: #ignore, listName: #ignore, shortDescription: #ignore}
+    And match response[0] == {id: '#present', type: '#present', label: '#present', visibility: '#present', longDescription: '#present', chemicalCount: '#present', createdAt: '#present', updatedAt: '#present', listName: '#present', shortDescription: '#present'}
 
   Scenario: Validating the response of the GET method for the list name attribute of public lists of type "other"
     Given path '/chemical/list/search/by-type/other'
     And param projection = 'chemicallistname'
     When method GET
     Then status 200
-    And match $ contains {listName: #ignore}
+    And match response[0] == {listName: '#present'}
 
   Scenario: Validating the response of the GET method for attributes of public lists of type "other"
     Given path '/chemical/list/search/by-type/other'
     And param projection = 'chemicallistwithdtxsids'
     When method GET
     Then status 200
-    And match $ contains {id: #ignore, type: #ignore, label: #ignore, visibility: #ignore, longDescription: #ignore, dtxsids: #ignore, chemicalCount: #ignore, createdAt: #ignore, updatedAt: #ignore, listName: #ignore, shortDescription: #ignore}
+    And match response[0] == {id: '#present', type: '#present', label: '#present', visibility: '#present', longDescription: '#present', dtxsids: '#present', chemicalCount: '#present', createdAt: '#present', updatedAt: '#present', listName: '#present', shortDescription: '#present'}
 
   Scenario: Validating the response of the GET method for attributes of public lists by name "ACSREAG"
     Given path '/chemical/list/search/by-name/ACSREAG'
     And param projection = 'chemicallistall'
     When method GET
     Then status 200
-    And match $ contains {id: #ignore, type: #ignore, label: #ignore, visibility: #ignore, longDescription: #ignore, chemicalCount: #ignore, createdAt: #ignore, updatedAt: #ignore, listName: #ignore, shortDescription: #ignore}
+    And match response == {id: '#present', type: '#present', label: '#present', visibility: '#present', longDescription: '#present', chemicalCount: '#present', createdAt: '#present', updatedAt: '#present', listName: '#present', shortDescription: '#present'}
 
   Scenario: Validating the response of the GET method for the list name attribute in public lists by name "ACSREAG"
     Given path '/chemical/list/search/by-name/ACSREAG'
     And param projection = 'chemicallistname'
     When method GET
     Then status 200
-    And match $ == {listName: #ignore}
+    And match response == {listName: '#present'}
 
   Scenario: validating the response of the GET method for attributes of public lists by name "ACSREAG"
     Given path '/chemical/list/search/by-name/ACSREAG'
     And param projection = 'chemicallistwithdtxsids'
     When method GET
     Then status 200
-    And match $ == {id: #ignore, type: #ignore, label: #ignore, visibility: #ignore, longDescription: #ignore, dtxsids: #ignore, chemicalCount: #ignore, createdAt: #ignore, updatedAt: #ignore, listName: #ignore, shortDescription: #ignore}
+    And match response == {id: '#present', type: '#present', label: '#present', visibility: '#present', longDescription: '#present', dtxsids: '#present', chemicalCount: '#present', createdAt: '#present', updatedAt: '#present', listName: '#present', shortDescription: '#present'}
