@@ -27,4 +27,4 @@ These tests are designed to verify that the Origin of the requests are permitted
 <br>
 <h3 align="center">Security Testing</h3>
 
-These tests are designed to ensure proper acceptance of API keys necessary to access API features. Data should only be pulled if the API keys are accepted and return an error if they are not. I have used Github's `Secret` feature to test out my own API key and attempted pushing a fake key to test for failure. The `Secret` is referenced in the karate-config file under the variable `API_KEY`
+These tests are designed to ensure proper acceptance of API keys necessary to access API features. Data should only be pulled if the API keys are accepted and return an error if they are not. I have used Github's `Secret` feature to reference my own API key and attempted pushing a fake key (listed in plain text) to test for failure. The `API_KEY` can be found in the karate-config file under the variable `apikey`. The use of `Secret` is only for potential automation with actions in the furute. Otherwise, it would have been left blank.
