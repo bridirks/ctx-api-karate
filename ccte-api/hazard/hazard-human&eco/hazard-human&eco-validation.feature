@@ -1,4 +1,5 @@
 @regression
+@variables
 Feature: Feature file for validating the response of the hazard human&eco resource
 
   Background:
