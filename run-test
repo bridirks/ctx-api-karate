@@ -4,7 +4,7 @@
 #runs test by api and separates results
 
 #./karate -e stg ccte-api/bioactivity
-#./karate -e stg ccte-api/chemical
+./karate -e stg ccte-api/chemical
 #./karate -e stg ccte-api/hazard
 
 #runs all tests together
