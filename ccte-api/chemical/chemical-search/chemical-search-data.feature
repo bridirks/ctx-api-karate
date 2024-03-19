@@ -61,11 +61,11 @@ Feature: Feature file for validating response data of chemical search startwith 
     Then status 200
     And match response[0] == {"casrn": "12725-34-7", "preferredName": "C 15", "dtxsid": "DTXSID20155485", "dtxcid": "DTXCID6077976", "searchName": "Approved Name", "searchValue": "C 15", "rank": 9, "hasStructureImage": 1, "smiles": "Cl.Cl.COC1=CC2=C(NCCCCN(C)C)C3=C(C=C(Br)C=C3)N=C2C=C1", "isMarkush": false}
 
-  Scenario: Validating response data using the GET method for chemical search by starting value of casrn in ECHA database
+  Scenario: Validating response data using the GET method for chemical search by starting value of casrn in ECHA database (data missing)
     Given path '/chemical/search/start-with/253-558-4'
     When method GET
-    Then status 200
-    And match response[0] ==
+    Then status 400
+    And match response == {"type": "about:blank", "title": "Bad Request", "status": 400, "detail": "Searched by Synonym: Found 0 results for '253-558-4'.", "instance": "/chemical/search/start-with/253-558-4", "suggestions": ["253-511-8", "253-053-9", "253-750-8", "253-751-3", "250-657-4", "255-508-7", "256-555-6", "256-557-7", "256-150-4", "259-550-7", "258-552-5", "258-958-2", "254-158-2", "254-118-4", "203-751-4", "200-508-4", "200-758-4", "213-568-1", "223-658-2", "263-657-4", "288-538-4", "243-654-4", "249-559-4", "943-548-4"]}
 
   Scenario: Validating response data using the GET method for chemical search by starting value of InChIKey
     Given path '/chemical/search/start-with/OBETXYAYXDNJHR-BKUSUEPDSA-N'
@@ -76,8 +76,8 @@ Feature: Feature file for validating response data of chemical search startwith 
   Scenario: Validating response data using the GET method for chemical search by starting value of InChIKey (url encoded)
     Given url "https://api-ccte-stg.epa.gov/chemical/search/start-with/1S%252FC3H6O%252Fc1-3%282%294%252Fh1-2H3"
     When method GET
-    Then status 200
-    And match response[0] ==
+    Then status 400
+    And match response == {"type": "about:blank", "title": "Bad Request", "status": 400, "detail": "Searched by Synonym: Found 0 results for '1S%2FC3H6O%2Fc1-3(2)4%2Fh1-2H3'.", "instance": "/chemical/search/start-with/1S%252FC3H6O%252Fc1-3%282%294%252Fh1-2H3", "suggestions": [null]}
 
   Scenario: Validating response data using the GET method for chemical search by starting value of CASRN (wrong dash)
     Given path '/chemical/search/start-with/76–16-4'
@@ -93,11 +93,11 @@ Feature: Feature file for validating response data of chemical search startwith 
 
   Scenario: Validating response data using the POST method for chemical search using different types of values (no Match)
     Given url "https://api-ccte-stg.epa.gov/chemical/search/equal/"
-    And request ["Biphsenol A", "80057", "000008057", "80/05/7", "80-50-7", "00080750"]
+    And request [Biphsenol A, 80057, 000008057, 80/05/7, 80-50-7, 00080750]
     When method POST
     Then status 200
-    And match response[0] ==
-
+    And match response == 
+    
   Scenario: Validating response data using the GET method for chemical search by starting value of chemical name
     Given path '/chemical/search/start-with/Triethyl lead'
     When method GET
@@ -122,11 +122,11 @@ Feature: Feature file for validating response data of chemical search startwith 
     Then status 400
     And match response == {"type": "about:blank", "title": "Bad Request", "status": 400, "detail": "Searched by InChI Key: Found 0 results for 'HVYWMOMLDIMFJA-DPAQBDIFSA-M'.", "instance": "/chemical/search/start-with/HVYWMOMLDIMFJA-DPAQBDIFSA-M", "suggestions":  ["HVYWMOMLDIMFJA-DPAQBDIFSA-N"]}
 
-  Scenario: Validating response data using the GET method for chemical search (Opsin result)
+  Scenario: Validating response data using the GET method for chemical search (Opsin result) unrecognized character
     Given path '/chemical/search/start-with/di(cholest-5-en-3β-yl) decanedioate'
     When method GET
-    Then status 200
-    And match response ==
+    Then status 400
+    And match response == {"type": "about:blank", "title": "Bad Request", "status": 400, "detail": "Searched by Synonym: Found 0 results for 'di(cholest-5-en-3β-yl) decanedioate'.", "instance": "/chemical/search/start-with/di(cholest-5-en-3%CE%B2-yl)%20decanedioate", "suggestions": ["WUHFQANUEHARLW-VXOVUZAMSA-N"]}
 
   Scenario: Validating response data using the GET method for chemical search exact match DTXSID
     Given path '/chemical/search/start-with/DTXSID7051216'
@@ -144,7 +144,7 @@ Feature: Feature file for validating response data of chemical search startwith 
     Given path '/chemical/search/start-with/71432'
     When method GET
     Then status 200
-    And match response[0] == {"isMarkush": false, "searchName": "CASRN", "searchValue": "71-43-2", "rank": 5, "dtxsid": "DTXSID3039242", "dtxcid": "DTXCID20135", "casrn": "71-43-2", "preferredName": "Benzene", "hasStructureImage": 1, "smiles": "C1=CC=CC=C1"}
+    And match response == [{"dtxsid": "DTXSID3039242", "dtxcid": "DTXCID20135", "casrn": "71-43-2", "preferredName": "Benzene", "hasStructureImage": 1, "smiles": "C1=CC=CC=C1", "isMarkush": false, "searchName": "CASRN", "searchValue": "71432", "rank": 5}]
 
   Scenario: Validating response data using the GET method for chemical search by starting value of chemical name (url encoded)
     Given url "https://api-ccte-stg.epa.gov/chemical/search/start-with/1-Naphthalenesulfonic%20acid%2C%203-hydroxy-4-%5B%282-hydroxy-1-naphthalenyl%29azo%5D-%2C%20chromium%20complex"
