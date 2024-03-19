@@ -31,9 +31,9 @@ These tests are designed to verify that the Origin of the requests are permitted
 These tests are designed to ensure proper acceptance of API keys necessary to access API features. Data should only be pulled if the API keys are accepted and return an error if they are not. I have used Github's `Secret` feature to reference my own API key and attempted pushing a fake key (listed in plain text) to test for failure. The `API_KEY` can be found in the karate-config file under the variable `apikey`. The use of `Secret` is only for potential automation with actions in the future. Otherwise, it would have been left blank.
 <br>
 <h2 align="center">Running a Test</h2>
-1. Download the entire project as a zip (this will contain a copy of the standalone jar file)
-2. Extract files to the location of your choice
-3. Open the command prompt
+1. Download the entire project as a zip (this will contain a copy of the standalone jar file)<br>
+2. Extract files to the location of your choice<br>
+3. Open the command prompt<br>
 4. Navigate to the directory that contains the project folder (ccte-api-karate) and run desired test file (smoke, regression, cors, or security)
 
   ```sh
