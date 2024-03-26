@@ -11,7 +11,7 @@ name: Java CI with Maven
 on:
   workflow_dispatch:
     inputs:
-      tags:
+      test:
         description: 'Test scenario tags'
         required: true
         default: 'smoke'
