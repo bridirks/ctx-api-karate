@@ -36,7 +36,7 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
     - name: Build with Java
-      run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -e stg ccte-api
+      run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -e prod ccte-api
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.1
