@@ -1,3 +1,4 @@
+@security
 Feature: Feature file for security check on chemical microservice
 
   Background:
