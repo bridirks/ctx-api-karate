@@ -22,7 +22,7 @@ function() {
   }
   else if (env == 'prod')
   {
-    config.ccte = `https://api-ccte-prod.epa.gov`
+    config.ccte = `https://api-ccte.epa.gov`
   }
 
     karate.configure('connectTimeout', 60000);
