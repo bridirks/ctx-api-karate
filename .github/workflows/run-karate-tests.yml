@@ -35,7 +35,6 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        gpg-private-key: ${{ secrets.API_KEY }}
     - name: Build with Java
       run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -e prod ccte-api
 
