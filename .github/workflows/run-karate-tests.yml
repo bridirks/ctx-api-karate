@@ -30,10 +30,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Tags: $TAGS"
           echo "Environment: $ENVIRONMENT"
         env:
-          TAGS: ${{ inputs.tags }}
           ENVIRONMENT: ${{ inputs.environment }}
 
   build:
@@ -49,12 +47,12 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn test -Dkarate.options="--tags @${{ inputs.tags }}" -Dtest=run-${{ inputs.tags }}
+      run: mvn test -Dkarate.options="--tags @${{ inputs.test }}" -Dtest=run-${{ inputs.test }}
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.1
       with:
     # Artifact name
-        name: ${{ inputs.tags }} Result
+        name: ${{ inputs.test }} Result
     # A file, directory or wildcard pattern that describes what to upload
         path: ccte-api/results
