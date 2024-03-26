@@ -44,4 +44,5 @@ jobs:
     # Artifact name
         name: ${{ inputs.test }} Result
     # A file, directory or wildcard pattern that describes what to upload
-        path: home/runner/work/ccte-api-karate/ccte-api-karate/target/karate-reports/karate-summary.html
+        path: file:///home/runner/work/ccte-api-karate/ccte-api-karate/target/karate-reports/karate-summary.html
+
