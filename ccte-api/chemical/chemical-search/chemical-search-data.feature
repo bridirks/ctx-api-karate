@@ -50,7 +50,7 @@ Feature: Feature file for validating response data of chemical search startwith 
     And match response[0] == {"casrn": "155471-10-6", "preferredName": "JWH-007", "dtxsid": "DTXSID20165903", "dtxcid": "DTXCID9088394", "searchName": "Approved Name", "searchValue": "JWH-007", "rank": 9, "hasStructureImage": 1, "smiles": "CCCCCN1C(C)=C(C(=O)C2=CC=CC3=CC=CC=C23)C2=CC=CC=C12", "isMarkush": false}
 
   Scenario: Validating response data using the GET method for chemical search by starting value of chemical name (url encoded)
-    Given url "https://api-ccte-stg.epa.gov/chemical/search/start-with/jwh%20007"
+    Given url "https://api-ccte.epa.gov/chemical/search/start-with/jwh%20007"
     When method GET
     Then status 200
     And match response[0] == {"casrn": "155471-10-6", "preferredName": "JWH-007", "dtxsid": "DTXSID20165903", "dtxcid": "DTXCID9088394", "searchName": "Approved Name", "searchValue": "JWH-007", "rank": 9, "hasStructureImage": 1, "smiles": "CCCCCN1C(C)=C(C(=O)C2=CC=CC3=CC=CC=C23)C2=CC=CC=C12", "isMarkush": false}
@@ -74,7 +74,7 @@ Feature: Feature file for validating response data of chemical search startwith 
     And match response[0] == {"casrn": "352431-38-0", "preferredName": "2-(~2~H_5_)Ethyl(~2~H_10_)hexanoic acid", "dtxsid": "DTXSID00745904", "dtxcid": "DTXCID40696648", "searchName": "InChIKey", "searchValue": "OBETXYAYXDNJHR-BKUSUEPDSA-N", "rank": 13, "hasStructureImage": 1, "smiles": "[2H]C([2H])([2H])C([2H])([2H])C([2H])([2H])C([2H])([2H])C([2H])(C(O)=O)C([2H])([2H])C([2H])([2H])[2H]", "isMarkush": false}
   
   Scenario: Validating response data using the GET method for chemical search by starting value of InChIKey (url encoded)
-    Given url "https://api-ccte-stg.epa.gov/chemical/search/start-with/1S%252FC3H6O%252Fc1-3%282%294%252Fh1-2H3"
+    Given url "https://api-ccte.epa.gov/chemical/search/start-with/1S%252FC3H6O%252Fc1-3%282%294%252Fh1-2H3"
     When method GET
     Then status 200
     And match response[0] ==
@@ -92,7 +92,7 @@ Feature: Feature file for validating response data of chemical search startwith 
     And match response == {"type":"about:blank", "title":"Bad Request", "status":400,"detail":"Searched by CASRN: Found 0 results for '7728-50-5'.\nCAS number fails checksum.", "instance":"/chemical/search/start-with/7728-50-5", "suggestions":[null]}
 
   Scenario: Validating response data using the POST method for chemical search using different types of values (no Match)
-    Given url "https://api-ccte-stg.epa.gov/chemical/search/equal/"
+    Given url "https://api-ccte.epa.gov/chemical/search/equal/"
     And request ["Biphsenol A", "80057", "000008057", "80/05/7", "80-50-7", "00080750"]
     When method POST
     Then status 200
@@ -147,7 +147,7 @@ Feature: Feature file for validating response data of chemical search startwith 
     And match response[0] == {"isMarkush": false, "searchName": "CASRN", "searchValue": "71-43-2", "rank": 5, "dtxsid": "DTXSID3039242", "dtxcid": "DTXCID20135", "casrn": "71-43-2", "preferredName": "Benzene", "hasStructureImage": 1, "smiles": "C1=CC=CC=C1"}
 
   Scenario: Validating response data using the GET method for chemical search by starting value of chemical name (url encoded)
-    Given url "https://api-ccte-stg.epa.gov/chemical/search/start-with/1-Naphthalenesulfonic%20acid%2C%203-hydroxy-4-%5B%282-hydroxy-1-naphthalenyl%29azo%5D-%2C%20chromium%20complex"
+    Given url "https://api-ccte.epa.gov/chemical/search/start-with/1-Naphthalenesulfonic%20acid%2C%203-hydroxy-4-%5B%282-hydroxy-1-naphthalenyl%29azo%5D-%2C%20chromium%20complex"
     When method GET
     Then status 200
     And match response[0] == {"isMarkush": false, "searchName": "Synonym", "searchValue": "1-Naphthalenesulfonic acid, 3-hydroxy-4-[(2-hydroxy-1-naphthalenyl)azo]-, chromium complex", "rank": 15, "dtxsid": "DTXSID201349251", "dtxcid": "DTXCID201778238", "casrn": "116446-95-8", "preferredName": "Chromate(2-), [3-hydroxy-4-[(2-hydroxy-1-naphthalenyl)azo]-1-naphthalenesulfonato(3-)][1-[(2-hydroxy-4-nitrophenyl)azo]-2-naphthalenolato(2-)]-, disodium", "hasStructureImage": 1, "smiles": "[Na+].[Na+].[Cr+3].[O-]C1=CC2=C(C=CC=C2)C=C1N=NC1=C([O-])C=C(C=C1)[N+]([O-])=O.[O-]C1=CC=C2C=CC=CC2=C1N=NC1=C2C=CC=CC2=C(C=C1[O-])S([O-])(=O)=O"}
