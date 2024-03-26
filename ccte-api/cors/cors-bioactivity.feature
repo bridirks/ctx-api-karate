@@ -1,3 +1,4 @@
+@cors
 Feature: CORS Requests
 
   Background:
