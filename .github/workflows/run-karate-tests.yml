@@ -37,9 +37,6 @@ jobs:
         distribution: 'oracle'
     - name: Build with Java
       run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -e prod ccte-api
-
-    - name: Cache
-      uses: actions/cache@v4.0.2
       
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.1
