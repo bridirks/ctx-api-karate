@@ -12,7 +12,6 @@ function() {
   var config = {
 	env: env,
     ccte: `https://api-ccte.epa.gov`,
-    apikey: `${{ secrets.API_KEY }}`,
     batchdtxsid: `["DTXSID7020182","DTXSID9020112"]`
   }
   // switch environment
