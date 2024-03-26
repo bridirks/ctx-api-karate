@@ -1,2 +1,2 @@
 #!/bin/bash
-java -jar karate-1.4.1.jar -t @regression -e stg ccte-api
+java -jar karate-1.4.1.jar -t @regression -e prod ccte-api
