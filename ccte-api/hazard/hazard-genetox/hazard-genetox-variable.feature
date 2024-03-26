@@ -15,7 +15,7 @@ Feature: Feature file for validating the responses of the genetox resource
     And match response[0] == {id: '#present', reportsPositive: '#present', reportsNegative: '#present', reportsOther: '#present', ames: '#present', micronucleus: '#present', dtxsid: '#present'}
 
   Scenario: Testing the POST method for genetox summary data by batch dtxsid
-    Given url "https://api-ccte-stg.epa.gov/hazard/genetox/summary/search/by-dtxsid/"
+    Given url "https://api-ccte.epa.gov/hazard/genetox/summary/search/by-dtxsid/"
     And request batchdtxsid
     When method POST
     Then status 200
