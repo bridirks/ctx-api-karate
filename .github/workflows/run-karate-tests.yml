@@ -44,5 +44,5 @@ jobs:
     # Artifact name
         name: ${{ inputs.test }} Result
     # A file, directory or wildcard pattern that describes what to upload
-        path: ccte-api/results
+        path: ccte-api/results/*.html
 
