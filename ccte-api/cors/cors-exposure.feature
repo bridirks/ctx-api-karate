@@ -1,3 +1,4 @@
+@cors
 Feature: CORS Requests Exposure
 
   Background:
