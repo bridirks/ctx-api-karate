@@ -32,7 +32,7 @@ jobs:
     steps:
     - name: Get current date
       id: date
-      run: echo "date=$(TZ=":EST" date +'%Y-%m-%d %H:%M')" >>$GITHUB_OUTPUT
+      run: echo "date=$(TZ=":Eastern Standard Time" date +'%Y-%m-%d %H%M')" >>$GITHUB_OUTPUT
       
     - uses: actions/checkout@v4
     - name: Set up JDK 21
