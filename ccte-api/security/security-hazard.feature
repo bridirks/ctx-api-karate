@@ -21,10 +21,10 @@ Feature: Feature file for security check on hazard microservice
   Scenario: Request missing auth
     Given path '/hazard/search/by-dtxsid/DTXSID0021125'
     When method GET
-    Then status 200
+    Then status 401
 
   Scenario: Send wrong api key
     Given path '/hazard/search/by-dtxsid/DTXSID0021125'
     And header x-api-key = `defg706d-092e-3ec5-9233-0f4c08576bda`
     When method GET
-    Then status 200
+    Then status 401
