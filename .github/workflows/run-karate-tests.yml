@@ -32,7 +32,7 @@ jobs:
     steps:
     - name: Get current date
       id: date
-      run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       
     - uses: actions/checkout@v4
     - name: Set up JDK 21
@@ -47,7 +47,7 @@ jobs:
       uses: actions/upload-artifact@v4.3.1
       with:
     # Artifact name
-        name: ${{ inputs.test }} Result $GITHUB_OUTPUT
+        name: ${{ inputs.test }} Result ${{ steps.date.outputs.date }}
     # A file, directory or wildcard pattern that describes what to upload
         path: ccte-api/results/
 
