@@ -37,7 +37,7 @@ jobs:
         java-version: '21'
         distribution: 'oracle'
     - name: Build with Java
-      run: java -jar karate-1.4.1.jar -T 5 -t @${{ inputs.test }} -e prod ccte-api -o ccte-api/results
+      run: java -jar karate-1.4.1.jar -T 5 -t @${{ inputs.test }} -e prod ccte-api -f cucumber:json ccte-api/results
       
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.1
