@@ -2,7 +2,7 @@
 Feature: Feature file for security check on exposure microservice
 
   Background:
-    * url 'https://api-ccte-stg.epa.gov'
+    * url 'https://api-ccte.epa.gov'
     * header Accept = 'application/json' 
     * header Content-Type = 'application/json; charset=utf-8'
 
