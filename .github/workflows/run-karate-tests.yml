@@ -26,7 +26,7 @@ jobs:
 
   build:
 
-    runs-on: self-hosted
+    runs-on: th883
     strategy:
       fail-fast: false
     steps:
