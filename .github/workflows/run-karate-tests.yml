@@ -32,7 +32,7 @@ jobs:
     steps:
     - name: Get current date
       id: date
-      run: echo "date=$(TZ=":AST" date +'%Y-%m-%d')" >>$GITHUB_OUTPUT
+      run: echo "date=$(date +'%Y-%m-%d')" >>$GITHUB_OUTPUT
       
     - uses: actions/checkout@v4
     - name: Set up JDK 21
