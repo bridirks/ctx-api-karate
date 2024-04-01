@@ -42,22 +42,7 @@ jobs:
         distribution: 'oracle'
         
     - name: Build with Java
-      run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -e prod ccte-api/bioactivity -o ccte-api/results
-
-    - name: Build with Java
-      run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -e prod ccte-api/chemical -o ccte-api/results
-
-    - name: Build with Java
-      run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -e prod ccte-api/cors -o ccte-api/results
-
-    - name: Build with Java
-      run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -e prod ccte-api/exposure -o ccte-api/results
-
-    - name: Build with Java
-      run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -e prod ccte-api/hazard -o ccte-api/results
-
-    - name: Build with Java
-      run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -e prod ccte-api/security -o ccte-api/results
+      run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -e prod ccte-api -o ccte-api/results
       
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.1
