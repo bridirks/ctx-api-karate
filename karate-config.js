@@ -12,7 +12,7 @@ function() {
   var config = {
 	env: env,
     ccte: `https://api-ccte.epa.gov`,
-    apikey: `fecbd7a0-14fc-4fe1-b2c7-77fc8d3adfc0`,
+    apikey: `acbd706d-091d-4dc5-9230-0f4b07476bda`,
     batchdtxsid: `["DTXSID7020182","DTXSID9020112"]`
   }
   // switch environment
