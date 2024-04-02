@@ -26,7 +26,7 @@ jobs:
 
   build:
 
-    runs-on: v2626umcth883
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
     steps:
