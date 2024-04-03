@@ -13,7 +13,7 @@ Feature: Feature file for hazard eco resource
     Then status 200
 
   Scenario: Testing the POST method for eco data by batch dtxsid
-    Given url "https://api-ccte-stg.epa.gov/hazard/eco/search/by-dtxsid/"
+    Given url "https://api-ccte.epa.gov/hazard/eco/search/by-dtxsid/"
     And request batchdtxsid
     When method POST
     Then status 200

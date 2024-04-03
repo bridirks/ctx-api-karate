@@ -16,7 +16,7 @@ Feature: Feature file for validating the responses of the hazard human resource
 
 
   Scenario: Testing the POST method for human data by batch dtxsid
-    Given url "https://api-ccte-stg.epa.gov/hazard/human/search/by-dtxsid/"
+    Given url "https://api-ccte.epa.gov/hazard/human/search/by-dtxsid/"
     And request batchdtxsid
     When method POST
     Then status 200

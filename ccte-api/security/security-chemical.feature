@@ -1,3 +1,4 @@
+@security
 Feature: Feature file for security check on chemical microservice
 
   Background:
@@ -20,10 +21,10 @@ Feature: Feature file for security check on chemical microservice
   Scenario: Request missing auth
     Given path '/chemical/detail/search/by-dtxsid/DTXSID7020182'
     When method GET
-    Then status 200
+    Then status 401
 
   Scenario: Send wrong api key
     Given path '/chemical/detail/search/by-dtxsid/DTXSID7020182'
     And header x-api-key = `defg706d-092e-3ec5-9233-0f4c08576bda`
     When method GET
-    Then status 200
+    Then status 401

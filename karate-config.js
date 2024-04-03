@@ -12,7 +12,7 @@ function() {
   var config = {
 	env: env,
     ccte: `https://api-ccte.epa.gov`,
-    apikey: `API_KEY`,
+    apikey: `acbd706d-091d-4dc5-9230-0f4b07476bda`,
     batchdtxsid: `["DTXSID7020182","DTXSID9020112"]`
   }
   // switch environment
@@ -22,7 +22,7 @@ function() {
   }
   else if (env == 'prod')
   {
-    config.ccte = `https://api-ccte-prod.epa.gov`
+    config.ccte = `https://api-ccte.epa.gov`
   }
 
     karate.configure('connectTimeout', 60000);

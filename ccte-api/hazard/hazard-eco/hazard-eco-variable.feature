@@ -15,7 +15,7 @@ Feature: Feature file for validating the responses of the hazard eco resource
     And match response[0] == {id: '#present', year: '#present', source: '#present', dtxsid: '#present', exposureRoute: '#present', priorityId: '#present', subsource: '#present', sourceUrl: '#present', subsourceUrl: '#present', riskAssessmentClass: '#present', toxvalType: '#present', toxvalSubtype: '#present', toxvalNumeric: '#present', toxvalNumericQualifier: '#present', toxvalUnits: '#present', studyType: '#present', studyDurationClass: '#present', studyDurationValue: '#present', studyDurationUnits: '#present', strain: '#present', sex: '#present', population: '#present', exposureMethod: '#present', exposureForm: '#present', media: '#present', lifestage: '#present', generation: '#present', criticalEffect: '#present', detailText: '#present', supercategory: '#present', speciesCommon: '#present', humanEcoNt: '#present'}
 
   Scenario: Testing the POST method for eco data by batch dtxsid
-    Given url "https://api-ccte-stg.epa.gov/hazard/eco/search/by-dtxsid/"
+    Given url "https://api-ccte.epa.gov/hazard/eco/search/by-dtxsid/"
     And request batchdtxsid
     When method POST
     Then status 200

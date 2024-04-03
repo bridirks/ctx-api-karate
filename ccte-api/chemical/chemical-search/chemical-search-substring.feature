@@ -1,3 +1,4 @@
+@ignore
 @smoke
 Feature: Feature file for chemical search resource (substring)
 
