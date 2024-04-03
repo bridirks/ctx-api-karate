@@ -28,6 +28,6 @@ Feature: Feature file for chemical search resource (starting value)
     Then status 200
 
   Scenario: Testing the GET method for chemical search by starting part of CASRN
-    Given path '/chemical/search/start-with/1912-24'
+    Given path '/chemical/search/start-with/1912-24-9'
     When method GET
     Then status 200
