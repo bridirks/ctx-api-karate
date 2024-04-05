@@ -1,6 +1,6 @@
 @regression
 @list
-Feature: Feature file for for inserting batch of dtxsids from one chemical list into the chemical detail API
+Feature: Feature file for monitoring the chemical list batch search resource
 
   Background:
     * url ccte
@@ -8,16 +8,16 @@ Feature: Feature file for for inserting batch of dtxsids from one chemical list 
     * header Content-Type = 'application/json; charset=utf-8'
     * header x-api-key = apikey
 
-  @dtxsids
   Scenario: Pulling data from the chemical list search resource (projection = chemicallistwithdtxsids)
     Given path '/chemical/list/search/by-name/ACSREAG'
     And param projection = 'chemicallistwithdtxsids'
     When method GET
     Then status 200
+    And def data = response.dtxsids
 
-  Scenario: Inserting data from the chemical list search feature into the chemical detail batch resource (projection = chemicaldetailstandard)
-    * def data = call read('chemical-list-batch.feature@dtxsids')
+    # Inserting DTXSIDs from the chemical list search feature into the chemical detail batch resource (projection = chemicaldetailstandard)
     Given url 'https://api-ccte.epa.gov/chemical/detail/search/by-dtxsid/'
+    And header x-api-key = apikey 
     And param projection = 'ccdchemicaldetail'
     And request data
     When method POST
