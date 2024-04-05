@@ -1,6 +1,6 @@
 @regression
 @list
-Feature: Feature file for monitoring the chemical list batch search resource
+Feature: Feature file for for inserting batch of dtxsids from one chemical list into the chemical detail API
 
   Background:
     * url ccte
