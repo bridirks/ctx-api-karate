@@ -45,8 +45,8 @@ These tests are designed to ensure proper acceptance of API keys necessary to ac
 5. Results will be viewable in a dashboard by selecting the url given at the end of a test run<br>
 
 <h2 align="center">Running a Test in Git Actions</h2>
-1. Navigate to the Actions tab in the ccte-api-karate repositry<br>
+1. Navigate to the Actions tab in the ccte-api-karate repository<br>
 2. Under `Workflows` select Karate<br>
-3. Highlighted in blue is the message `This workflow has a workflow_dispatch event trigger.` To the right of this message is a drop down menu labeled `Run Workflow`. Select the desired test tag from the drop down menu.<br>
+3. Highlighted in blue is the message `This workflow has a workflow_dispatch event trigger.` To the right of this message is a drop-down menu labeled `Run Workflow`. Select the desired test tag from the drop-down menu.<br>
 4. Select `Run Workflow`<br>
 5. Results will be viewable in an artifact folder after the tests have completed.
