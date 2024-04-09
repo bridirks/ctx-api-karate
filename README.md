@@ -20,7 +20,9 @@ Feature files labeled `Smoke` are designed to validate individual features in ea
 <br>
 <h3 align="center">Regression Testing</h3>
 
-Feature files labeled `Regression` are designed to validate the responses of individual features in each API. They call on available features and verify that the responses contain the correct labels. Labels vary depending on the variables contained in the data being requested. This is not to be confused with data validation, we are only checking that the responses contain the correct variables. The content of those variables is being ignored.
+Feature files labeled `Regression` are being  split between two categories referred to in a sub-tag.<br>
+`variable` - designed to validate the responses of individual features in each API. They call on available features and verify that the responses contain the correct labels. Labels vary depending on the variables contained in the data being requested. This is not to be confused with data validation, we are only checking that the responses contain the correct variables. The content of those variables is being ignored.<br>
+`data` - the design is similar to variable, but this time the requests are looking for specific responses to a search. These tests will only work on their pre-set search item.
 <br>
 <h3 align="center">CORS Testing</h3>
 
@@ -43,8 +45,8 @@ These tests are designed to ensure proper acceptance of API keys necessary to ac
 5. Results will be viewable in a dashboard by selecting the url given at the end of a test run<br>
 
 <h2 align="center">Running a Test in Git Actions</h2>
-1. Navigate to the Actions tab in the ccte-api-karate repositry<br>
+1. Navigate to the Actions tab in the ccte-api-karate repository<br>
 2. Under `Workflows` select Karate<br>
-3. Highlighted in blue is the message `This workflow has a workflow_dispatch event trigger.` To the right of this message is a drop down menu labeled `Run Workflow`. Select the desired test tag from the drop down menu.<br>
+3. Highlighted in blue is the message `This workflow has a workflow_dispatch event trigger.` To the right of this message is a drop-down menu labeled `Run Workflow`. Select the desired test tag from the drop-down menu.<br>
 4. Select `Run Workflow`<br>
 5. Results will be viewable in an artifact folder after the tests have completed.
