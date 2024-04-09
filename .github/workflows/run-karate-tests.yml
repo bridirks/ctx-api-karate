@@ -35,7 +35,7 @@ jobs:
 
   build:
 
-    runs-on: th878
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
     steps:
