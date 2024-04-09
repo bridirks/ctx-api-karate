@@ -52,7 +52,9 @@ jobs:
         distribution: 'oracle'
         
     - name: Build with Java
-      run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -e @${{ inputs.env }} @$config.apikey{{API_KEY}} ccte-api -o ccte-api/results
+      env: 
+        apikey: ${{ secrets.API_KEY }}
+      run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -e @${{ inputs.env }} ccte-api -o ccte-api/results
       
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.1      
