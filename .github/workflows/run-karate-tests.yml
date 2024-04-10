@@ -53,7 +53,7 @@ jobs:
         cache: maven
         
     - name: Run Karate with Maven
-      run: mvn clean test -Dkarate.env=@${{ inputs.env }} -Dkarate.options=--tags @${{ inputs.test }} ~@ignore
+      run: mvn clean test -Dkarate.env=@${{ inputs.env }} "-Dkarate.options=--tags @${{ inputs.test }} ~@ignore" -Dtest=ccte-api
       
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.1      
