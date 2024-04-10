@@ -52,6 +52,7 @@ jobs:
  
   result:
     runs-on: th878
+    needs: build
     steps:
     - name: Get current date
       id: date
@@ -68,7 +69,7 @@ jobs:
 
   clean-up:
    runs-on: th878
-   needs: build
+   needs: result
    steps:
     - name: 'Cleanup build folder'
       run: |
