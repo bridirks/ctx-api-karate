@@ -44,14 +44,18 @@ jobs:
       run: echo "date=$(TZ=":EST" date +'%Y-%m-%d %H.%MEST')" >>$GITHUB_OUTPUT
         
     - uses: actions/checkout@v4
-    - uses: actions/cache@v4
 
     - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
         java-version: '21'
         distribution: 'oracle'
-
+        
+    - name: Need for Speed
+      uses: actions/cache@v4
+      with:
+          path: ~/.gradle/caches
+          key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
         
     - name: Run Karate with Java
       run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -e @${{ inputs.env }} ~@ignore ccte-api -o ccte-api/results
