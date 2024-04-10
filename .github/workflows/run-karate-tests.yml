@@ -49,8 +49,7 @@ jobs:
       uses: actions/setup-java@v4
       with:
         java-version: '21'
-        distribution: 'temurin'
-        cache: maven
+        distribution: 'oracle'
         
     - name: Run Karate with Maven
       run: mvn clean test -Dkarate.env=@${{ inputs.env }} "-Dkarate.options=--tags @${{ inputs.test }} ~@ignore" -Dtest=ccte-api
