@@ -50,8 +50,6 @@ jobs:
       with:
         java-version: '21'
         distribution: 'oracle'
-        cache: 'maven'
-        cache-dependency-path: 'pom.xml'
         
     - name: Run Karate with Java
       run: java -jar karate-1.4.1.jar -t ${{ inputs.test }} ~@ignore -e ${{ inputs.env }} ccte-api
