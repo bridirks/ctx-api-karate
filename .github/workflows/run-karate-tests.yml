@@ -50,7 +50,7 @@ jobs:
       with:
         java-version: '21'
         distribution: 'oracle'
-        cache: 'sbt'
+
         
     - name: Run Karate with Java
       run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -e @${{ inputs.env }} ~@ignore ccte-api -o ccte-api/results
