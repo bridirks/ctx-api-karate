@@ -50,9 +50,10 @@ jobs:
       with:
         java-version: '21'
         distribution: 'oracle'
+        cache: maven
         
-    - name: Run Karate with Java
-      run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} ~@ignore -e @${{ inputs.env }} ccte-api -o ccte-api/results
+    - name: Run Karate with Maven
+      run: mvn clean test -Dkarate.env=@${{ inputs.env }} -Dkarate.options=--tags @${{ inputs.test }} ~@ignore
       
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.1      
