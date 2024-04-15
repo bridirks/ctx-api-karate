@@ -1,6 +1,4 @@
 @cors
-@cors/sec
-
 Feature: CORS Requests Exposure
 
   Background:
