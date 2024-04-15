@@ -1,6 +1,5 @@
 @regression
 @variables
-@bioactivity
 Feature: Feature file to validate responses of bioactivity assay annotation resource
 
   Background:
