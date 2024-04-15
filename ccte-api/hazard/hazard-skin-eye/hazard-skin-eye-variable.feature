@@ -1,7 +1,5 @@
 @regression
 @variables
-@hazard
-
 Feature: Feature file for validating the responses of the skin eye resource
 
   Background:
