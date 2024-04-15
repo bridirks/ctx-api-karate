@@ -1,4 +1,3 @@
-@ignore
 @smoke
 Feature: Feature file for chemical property resource
 
