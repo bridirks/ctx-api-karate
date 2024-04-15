@@ -1,6 +1,4 @@
 @smoke
-@exposure
-
 Feature: Feature file for exposure product data resource
 
   Background:
