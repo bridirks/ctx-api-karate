@@ -1,4 +1,6 @@
 @smoke
+@hazard
+
 Feature: Feature file for hazard eco resource
 
   Background:
