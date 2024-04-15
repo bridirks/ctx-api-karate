@@ -1,6 +1,4 @@
 @smoke
-@hazard
-
 Feature: Feature file for testing the hazard human&eco resource
 
   Background:
