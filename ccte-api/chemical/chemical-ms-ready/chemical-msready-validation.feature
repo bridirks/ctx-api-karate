@@ -1,5 +1,7 @@
 @regression
 @variables
+@chemical
+
 Feature: Feature file for validating the responses of the chemical search resource (ms ready)
 
   Background:
