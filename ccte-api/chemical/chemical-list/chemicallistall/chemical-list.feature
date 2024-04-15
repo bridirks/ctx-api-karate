@@ -25,3 +25,9 @@ Feature: Feature file for chemical list resource
     And param projection = 'chemicallistall'
     When method GET
     Then status 200
+
+  Scenario: Testing the GET method for all public lists (projection = chemicallistall)
+    Given url "https://api-ccte.epa.gov/chemical/list/"
+    And param projection = 'chemicallistall'
+    When method GET
+    Then status 200
