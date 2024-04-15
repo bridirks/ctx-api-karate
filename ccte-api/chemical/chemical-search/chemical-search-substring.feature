@@ -1,5 +1,7 @@
 @ignore
 @smoke
+@chemical
+
 Feature: Feature file for chemical search resource (substring)
 
   Background:
