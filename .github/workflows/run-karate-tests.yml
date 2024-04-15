@@ -65,7 +65,6 @@ jobs:
  
   result:
     runs-on: th878
-    needs: build
     steps:
     - name: Get current date
       id: date
