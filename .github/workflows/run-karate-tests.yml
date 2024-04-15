@@ -32,7 +32,7 @@ on:
         - security
 
        sub-test:
-        description: 'API Selection for Smoke/Regression'
+        description: 'API Selection'
         required: true
         default: 'chemical'
         type: choice
@@ -41,7 +41,8 @@ on:
         - chemical
         - exposure
         - hazard
-        - cors/sec
+        - cors
+        - security
 
 jobs:
 
@@ -60,7 +61,7 @@ jobs:
         distribution: 'oracle'
         
     - name: Run Karate with Java
-      run: java -jar karate-1.4.1.jar -t {"@${{ inputs.test }}","@${{ inputs.sub-test }}"} -e ${{ inputs.env }} ccte-api -o ccte-api/results/
+      run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -e ${{ inputs.env }} ccte-api/${{ inputs.sub-test }} -o ccte-api/results/
  
   result:
     runs-on: th878
