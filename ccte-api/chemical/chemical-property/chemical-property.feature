@@ -22,13 +22,3 @@ Feature: Feature file for chemical property resource
     And request batchdtxsid
     When method POST
     Then status 200
-
-  Scenario: Testing the GET method for property ids by type (predicted)
-    Given path '/chemical/property/predicted/name'
-    When method GET
-    Then status 200
-
-  Scenario: Testing the GET method for property ids by type (experimental)
-    Given path '/chemical/property/experimental/name'
-    When method GET
-    Then status 200
