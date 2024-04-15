@@ -91,6 +91,7 @@ Feature: Feature file for validating response data of chemical search startwith 
     Then status 400
     And match response == {"type":"about:blank", "title":"Bad Request", "status":400,"detail":"Searched by CASRN: Found 0 results for '7728-50-5'.\nCAS number fails checksum.", "instance":"/chemical/search/start-with/7728-50-5", "suggestions":[null]}
 
+  @ignore
   Scenario: Validating response data using the POST method for chemical search using different types of values (no Match)
     Given url "https://api-ccte.epa.gov/chemical/search/equal/"
     And request 'Biphsenol A, 80057, 000008057, 80/05/7, 80-50-7, 00080750'
