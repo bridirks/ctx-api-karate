@@ -1,4 +1,6 @@
 @security
+@cors/sec
+
 Feature: Feature file for security check on bioactivity microservice
 
   Background:
