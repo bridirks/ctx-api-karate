@@ -1,4 +1,5 @@
 @smoke
+@bioactivity
 Feature: Feature file for bioactivity resource
 
   Background:
