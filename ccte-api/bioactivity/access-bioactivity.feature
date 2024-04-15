@@ -1,5 +1,4 @@
 @smoke
-@bioactivity
 Feature: Feature file to access bioactivity api
 
 
