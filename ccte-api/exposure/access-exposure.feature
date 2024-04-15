@@ -1,6 +1,4 @@
 @smoke
-@exposure
-
 Feature: Feature file to access exposure api
 
 
