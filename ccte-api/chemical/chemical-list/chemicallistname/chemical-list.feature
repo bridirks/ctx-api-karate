@@ -13,3 +13,10 @@ Feature: Feature file for chemical list resource
     And param projection = 'chemicallistname'
     When method GET
     Then status 200
+
+  Scenario: Testing the GET method for public lists by name (projection = chemicallistname)
+    Given path '/chemical/list/search/by-name/ACSREAG'
+    And param projection = 'chemicallistname'
+    When method GET
+    Then status 200
+    And match response == {listName: '#present'}
