@@ -1,6 +1,4 @@
 @security
-@cors/sec
-
 Feature: Feature file for security check on hazard microservice
 
   Background:
