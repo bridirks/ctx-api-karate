@@ -1,5 +1,7 @@
 @regression
 @variables
+@exposure
+
 Feature: Feature file for validating responses of exposure list-presence resource
 
   Background:
