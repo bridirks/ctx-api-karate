@@ -1,5 +1,4 @@
 @cors
-@cors/sec
 Feature: CORS Requests
 
   Background:
