@@ -19,7 +19,7 @@ on:
         - prod
         - stg
        test:
-        description: 'Test scenario tags'
+        description: 'Test Type'
         required: true
         default: 'smoke'
         type: choice
@@ -30,6 +30,17 @@ on:
         - variables
         - cors
         - security
+
+       sub-test:
+        description: 'API Selection (smoke/regression)'
+        required: false
+        default: 'chemical'
+        type: choice
+        options:
+        - bioactivity
+        - chemical
+        - exposure
+        - hazard
 
 jobs:
 
@@ -48,7 +59,7 @@ jobs:
         distribution: 'oracle'
         
     - name: Run Karate with Java
-      run: java -jar karate-1.4.1.jar -t ${{ inputs.test }} ~@ignore -e ${{ inputs.env }} ccte-api -o ccte-api/results/
+      run: java -jar karate-1.4.1.jar -t ${{ inputs.test }} ${{ inputs.sub-test }}  ~@ignore -e ${{ inputs.env }} ccte-api -o ccte-api/results/
  
   result:
     runs-on: th878
