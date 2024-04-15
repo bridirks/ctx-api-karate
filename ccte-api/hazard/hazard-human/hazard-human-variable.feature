@@ -1,5 +1,7 @@
 @regression
 @variables
+@hazard
+
 Feature: Feature file for validating the responses of the hazard human resource
 
   Background:
