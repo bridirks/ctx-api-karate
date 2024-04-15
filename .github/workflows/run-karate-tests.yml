@@ -30,7 +30,7 @@ on:
         - variables
         - cors
         - security
-
+       #directory reference runs faster than issuing a 2nd tag in github actions
        sub-test:
         description: 'API Selection'
         required: true
