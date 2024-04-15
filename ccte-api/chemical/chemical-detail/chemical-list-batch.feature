@@ -1,5 +1,6 @@
 @regression
 @list
+@chemical
 Feature: Feature file for monitoring the chemical list batch search resource
 
   Background:
