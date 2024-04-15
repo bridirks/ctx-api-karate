@@ -20,3 +20,15 @@ Feature: Feature file for chemical list resource
     When method GET
     Then status 200
     And match response == {listName: '#present'}
+
+  Scenario: Testing the GET method for public lists by dtxsid (projection = chemicallistname)
+    Given path '/chemical/list/search/by-dtxsid/DTXSID7020182'
+    And param projection = 'chemicallistname'
+    When method GET
+    Then status 200
+
+  Scenario: Testing the GET method for all public lists (projection = chemicallistname)
+    Given url "https://api-ccte.epa.gov/chemical/list/"
+    And param projection = 'chemicallistname'
+    When method GET
+    Then status 200
