@@ -1,6 +1,4 @@
 @smoke
-@hazard
-
 Feature: Feature file for skin eye resource
 
   Background:
