@@ -32,7 +32,7 @@ on:
         - security
 
        sub-test:
-        description: 'API Selection (smoke/regression)'
+        description: 'API Selection for Smoke/Regression'
         required: false
         default: 'chemical'
         type: choice
