@@ -1,4 +1,6 @@
 @smoke
+@chemical
+
 Feature: Feature file to access chemical api
 
 
