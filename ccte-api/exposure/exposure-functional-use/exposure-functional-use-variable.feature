@@ -1,5 +1,6 @@
 @regression
 @variables
+@exposure
 Feature: Feature file for validating responses of exposure functional use resource
 
   Background:
