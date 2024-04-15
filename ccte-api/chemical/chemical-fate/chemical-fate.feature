@@ -1,6 +1,4 @@
 @smoke
-@chemical
-
 Feature: Feature file for chemical fate resource
 
   Background:
