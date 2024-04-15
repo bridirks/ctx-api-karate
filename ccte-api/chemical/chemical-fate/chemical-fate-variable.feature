@@ -1,7 +1,5 @@
 @regression
 @variables
-@chemical
-
 Feature: Feature file for validating the chemical fate resource
 
   Background:
