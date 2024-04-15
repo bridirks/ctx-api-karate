@@ -1,4 +1,6 @@
 @smoke
+@hazard
+
 Feature: Feature file to access hazard api
 
 
