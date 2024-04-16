@@ -1,5 +1,5 @@
 @smoke
-Feature: Feature file for chemical list resource
+Feature: Feature file for chemical list resource with projection chemicallistall
 
   Background:
     * url ccte
