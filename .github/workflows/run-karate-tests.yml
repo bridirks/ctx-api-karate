@@ -65,6 +65,8 @@ jobs:
  
   result:
     runs-on: th878
+    strategy:
+      fail-fast: false
     needs: build
     steps:
     - name: Get current date
