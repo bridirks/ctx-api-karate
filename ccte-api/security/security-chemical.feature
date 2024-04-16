@@ -25,6 +25,6 @@ Feature: Feature file for security check on chemical microservice
 
   Scenario: Send wrong api key
     Given path '/chemical/detail/search/by-dtxsid/DTXSID7020182'
-    And header x-api-key = `${{ secrets.FAKE_KEY }}`
+    And header x-api-key = ${{ secrets.FAKE_KEY }}
     When method GET
     Then status 401
