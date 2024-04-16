@@ -1,6 +1,6 @@
 @regression
 @variables
-Feature: Feature file for chemical list resource
+Feature: Feature file for chemical list resource with projection chemicallistname
 
   Background:
     * url ccte
