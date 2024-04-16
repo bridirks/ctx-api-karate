@@ -31,7 +31,7 @@ on:
         - cors
         - security
        #directory reference runs faster than issuing a 2nd tag in github actions
-       sub-test:
+       api-selection:
         description: 'API Selection (cors/security must match)'             
         required: true
         default: 'chemical'
@@ -61,7 +61,7 @@ jobs:
         distribution: 'oracle'
         
     - name: Run Karate with Java
-      run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -e ${{ inputs.env }} ccte-api/${{ inputs.sub-test }} -o ccte-api/results/
+      run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -e ${{ inputs.env }} ccte-api/${{ inputs.api-selection }} -o ccte-api/results/
  
   result:
     runs-on: th878
@@ -76,7 +76,7 @@ jobs:
       if: ${{ always() }}
       with:
     # Artifact name
-        name: ${{ inputs.sub-test }} ${{ inputs.test }} Result ${{ steps.date.outputs.date }}
+        name: ${{ inputs.api-selection }} ${{ inputs.test }} Result ${{ steps.date.outputs.date }}
     # A file, directory or wildcard pattern that describes what to upload
         path: ccte-api/results/
 
