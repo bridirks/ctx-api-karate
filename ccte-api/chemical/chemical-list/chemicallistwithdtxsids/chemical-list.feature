@@ -15,7 +15,7 @@ Feature: Feature file for chemical list resource
     Then status 200
 
   Scenario: Testing the GET method for public lists by name (projection = chemicallistwithdtxsids)
-    Given path '/chemical/list/search/by-name/ACSREAG'
+    Given path '/chemical/list/search/by-name/SCILGREYSQUARE'
     And param projection = 'chemicallistwithdtxsids'
     When method GET
     Then status 200
