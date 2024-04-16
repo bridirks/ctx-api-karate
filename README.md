@@ -54,4 +54,4 @@ These tests are designed to ensure proper acceptance of API keys necessary to ac
 <h3 align="center">Optional - to View Full Dashboard</h3> 
 1. Download the karate project<br>
 2. Download the artifact and extract the contents into the 'target' folder of the downloaded karate project<br>
-3. Select 'karate-summary.html' to open in browser
+3. Select 'karate-summary.html' from the karate-reports folder to open in browser
