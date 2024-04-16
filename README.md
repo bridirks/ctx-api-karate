@@ -43,6 +43,7 @@ These tests are designed to ensure proper acceptance of API keys necessary to ac
   ./run-smoke
   ```
 5. Results will be viewable in a dashboard by selecting the url given at the end of a test run<br>
+**Note: if you are running this project on Windows, you will need to add '.bat' to the end of all of the test files in order to run them from command line**
 
 <h2 align="center">Running a Test in Git Actions</h2>
 1. Navigate to the Actions tab in the ccte-api-karate repository<br>
