@@ -21,7 +21,7 @@ Feature files labeled `Smoke` are designed to validate individual features in ea
 <h3 align="center">Regression Testing</h3>
 
 Feature files labeled `Regression` are being  split between two categories referred to in a sub-tag.<br>
-`variable` - designed to validate the responses of individual features in each API. They call on available features and verify that the responses contain the correct labels. Labels vary depending on the variables contained in the data being requested. This is not to be confused with data validation, we are only checking that the responses contain the correct variables. The content of those variables is being ignored.<br>
+`variables` - designed to validate the responses of individual features in each API. They call on available features and verify that the responses contain the correct labels. Labels vary depending on the variables contained in the data being requested. This is not to be confused with data validation, we are only checking that the responses contain the correct variables. The content of those variables is being ignored.<br>
 `data` - the design is similar to variable, but this time the requests are looking for specific responses to a search. These tests will only work on their pre-set search item.
 <br>
 <h3 align="center">CORS Testing</h3>
