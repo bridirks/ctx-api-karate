@@ -25,6 +25,6 @@ Feature: Feature file for security check on exposure microservice
 
   Scenario: Send wrong api key
     Given path '/exposure/functional-use/search/by-dtxsid/DTXSID0020232'
-    And header x-api-key = `defg706d-092e-3ec5-9233-0f4c08576bda`
+    And header x-api-key = `${{ secrets.FAKE_KEY }}`
     When method GET
     Then status 401
