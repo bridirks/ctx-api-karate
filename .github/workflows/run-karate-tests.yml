@@ -32,7 +32,7 @@ on:
         - security
        #directory reference runs faster than issuing a 2nd tag in github actions
        sub-test:
-        description: 'API Selection<br>(cors and security must match)'
+        description: 'API Selection\n (cors and security must match)'
         required: true
         default: 'chemical'
         type: choice
