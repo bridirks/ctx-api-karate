@@ -49,7 +49,7 @@ These tests are designed to ensure proper acceptance of API keys necessary to ac
 2. Under `Workflows` select Karate<br>
 3. Highlighted in blue is the message `This workflow has a workflow_dispatch event trigger.` To the right of this message is a drop-down menu labeled `Run Workflow`. Select the desired test tag from the drop-down menu.<br>
 4. Select `Run Workflow`<br>
-5. Results will be viewable in an artifact folder after the tests have completed. These results will not be formatted
-6. (Optional) Download the karate project
-6. Download the artifact and extract the contents into the 'target' folder of the downloaded karate project to view as fully functioning dashboard
-7. Select 'karate-summary.html' to open in browser
+5. Results will be viewable in an artifact folder after the tests have completed. These results will not be formatted<br>
+6. (Optional) Download the karate project<br>
+7. Download the artifact and extract the contents into the 'target' folder of the downloaded karate project to view as fully functioning dashboard<br>
+8. Select 'karate-summary.html' to open in browser<br>
