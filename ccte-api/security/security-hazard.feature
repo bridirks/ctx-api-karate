@@ -26,6 +26,6 @@ Feature: Feature file for security check on hazard microservice
 
   Scenario: Send wrong api key
     Given path '/hazard/search/by-dtxsid/DTXSID0021125'
-    And header x-api-key = `defg706d-092e-3ec5-9233-0f4c08576bda`
+    And header x-api-key = `${{ secrets.FAKE_KEY }}`
     When method GET
     Then status 401
