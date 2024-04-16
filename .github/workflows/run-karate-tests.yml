@@ -61,7 +61,7 @@ jobs:
         distribution: 'oracle'
         
     - name: Run Karate with Java
-      run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -e ${{ inputs.env }} ccte-api/${{ inputs.api-selection }}
+      run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -e ${{ inputs.env }} ccte-api/${{ inputs.api-selection }} -o ccte-api/reports/
  
   result:
     runs-on: th878
@@ -71,14 +71,6 @@ jobs:
       id: date
       run: echo "date=$(TZ=":EST" date +'%Y-%m-%d %H.%MEST')" >>$GITHUB_OUTPUT
       
-    - name: Download a Build Artifact
-      uses: actions/download-artifact@v4.1.4      
-      if: ${{ always() }}
-      with:
-    # Artifact name
-        name: ${{ inputs.api-selection }} ${{ inputs.test }} Result ${{ steps.date.outputs.date }}
-    # A file, directory or wildcard pattern that describes what to upload
-        path: ccte-api/target/
         
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.1      
@@ -87,8 +79,17 @@ jobs:
     # Artifact name
         name: ${{ inputs.api-selection }} ${{ inputs.test }} Result ${{ steps.date.outputs.date }}
     # A file, directory or wildcard pattern that describes what to upload
-        path: ccte-api/target/karate-summary.html
+        path: ccte-api/reports
 
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v4.1.4      
+      if: ${{ always() }}
+      with:
+    # Artifact name
+        name: ${{ inputs.api-selection }} ${{ inputs.test }} Result ${{ steps.date.outputs.date }}
+    # A file, directory or wildcard pattern that describes what to upload
+        path: target/
+        
   clean-up:
    runs-on: th878
    needs: result
