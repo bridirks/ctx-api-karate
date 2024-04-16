@@ -1,7 +1,7 @@
 @ignore
 @regression
 @variables
-Feature: Feature file for chemical list resource
+Feature: Feature file for chemical list resource with projection chemicallistwithdtxsids
 
   Background:
     * url ccte
