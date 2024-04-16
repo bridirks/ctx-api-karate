@@ -1,6 +1,6 @@
 
 @smoke
-Feature: Feature file for chemical list resource
+Feature: Feature file for chemical list resource with projection chemicallistwithdtxsids
 
   Background:
     * url ccte
@@ -9,7 +9,7 @@ Feature: Feature file for chemical list resource
     * header x-api-key = apikey
 
   Scenario: Testing the GET method for public lists by type (projection = chemicallistwithdtxsids)
-    Given path '/chemical/list/search/by-type/federal'
+    Given path '/chemical/list/search/by-type/state'
     And param projection = 'chemicallistwithdtxsids'
     When method GET
     Then status 200
