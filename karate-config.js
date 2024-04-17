@@ -1,6 +1,6 @@
 function() {
     var env = karate.env; // get java system property 'karate.env'
-    var key = ${{ secrets.API_KEY }}
+    var key = ${{ secrets.API_KEY }};
     karate.log('karate.env selected environment was:', env);
     karate.configure("ssl", true)
 
