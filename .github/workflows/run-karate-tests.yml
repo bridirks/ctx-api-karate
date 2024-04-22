@@ -55,7 +55,7 @@ jobs:
       shell: bash
       run: |
           echo "$apikey" >> config.apikey
-          cat config.apikey
+          cat karate-config.js
   build:
 
     runs-on: th878
