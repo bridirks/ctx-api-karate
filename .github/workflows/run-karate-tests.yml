@@ -57,8 +57,8 @@ jobs:
         MY_SECRET: ${{secrets.API_KEY}}
       shell: bash
       run: |
-          echo "$MY_SECRET" >> config.apikey
-          cat config.apikey
+          echo "$MY_SECRET" >> karate-config.apikey
+          cat karate-config.apikey
           
     - uses: actions/checkout@v4
 
