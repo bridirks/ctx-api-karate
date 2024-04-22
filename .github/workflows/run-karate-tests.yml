@@ -46,11 +46,8 @@ on:
 
 jobs:
 
-  build:
-
-    runs-on: th878
-    strategy:
-      fail-fast: false
+  secret:
+    runs-on: ubuntu-latest
     steps:
     - name: secrets
       env:
@@ -59,7 +56,12 @@ jobs:
       run: |
           echo "$apikey" >> karate-config.js
           cat karate-config.js
-          
+  build:
+
+    runs-on: th878
+    strategy:
+      fail-fast: false
+    steps:     
     - uses: actions/checkout@v4
 
     - name: Set up JDK 21
