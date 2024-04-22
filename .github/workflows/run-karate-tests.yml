@@ -54,7 +54,7 @@ jobs:
         apikey: ${{secrets.API_KEY}}
       shell: bash
       run: |
-          echo "$apikey" >> karate-config.js
+          echo "$apikey" >> config.apikey.karate-config.js
           cat karate-config.js
   build:
 
