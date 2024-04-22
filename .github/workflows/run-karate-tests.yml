@@ -54,11 +54,11 @@ jobs:
     steps:
     - name: secrets
       env:
-        MY_SECRET: ${{secrets.API_KEY}}
+        apikey: ${{secrets.API_KEY}}
       shell: bash
       run: |
-          echo "$MY_SECRET" >> karate-config.apikey
-          cat karate-config.apikey
+          echo "$apikey" >> karate-config.js
+          cat karate-config.js
           
     - uses: actions/checkout@v4
 
