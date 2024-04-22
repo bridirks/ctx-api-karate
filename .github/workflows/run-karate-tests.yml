@@ -51,10 +51,10 @@ jobs:
     steps:
     - name: secrets
       env:
-        config.apikey: ${{secrets.API_KEY}}
+        apikey: ${{secrets.API_KEY}}
       shell: bash
       run: |
-          echo "$config.apikey" >> karate-config.js
+          echo "$apikey" >> karate-config.js
           cat karate-config.js
   build:
 
