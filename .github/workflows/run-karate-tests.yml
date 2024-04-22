@@ -47,7 +47,7 @@ on:
 jobs:
 
   secret:
-    runs-on: ubuntu-latest
+    runs-on: th878
     steps:
     - name: secrets
       env:
