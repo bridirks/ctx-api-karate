@@ -52,6 +52,14 @@ jobs:
     strategy:
       fail-fast: false
     steps:
+    - name: secrets
+      env:
+        MY_SECRET: ${{secrets.API_KEY}}
+      shell: bash
+      run: |
+          echo "$MY_SECRET" >> config.apikey
+          cat config.apikey
+          
     - uses: actions/checkout@v4
 
     - name: Set up JDK 21
