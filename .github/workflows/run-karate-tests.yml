@@ -46,16 +46,6 @@ on:
 
 jobs:
 
-  secret:
-    runs-on: th878
-    steps:
-    - name: secrets
-      env:
-        apikey: ${{secrets.API_KEY}}
-      shell: bash
-      run: |
-          echo "$apikey" >> config.apikey
-          cat karate-config.js
   build:
 
     runs-on: th878
