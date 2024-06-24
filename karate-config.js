@@ -1,6 +1,6 @@
 function() {
     var env = karate.env; // get java system property 'karate.env'
-    
+    var key = karate.key;
     karate.log('karate.env selected environment was:', env);
     karate.configure("ssl", true)
 
@@ -12,7 +12,7 @@ function() {
   var config = {
 	env: env,
     ccte: `https://api-ccte.epa.gov`,
-    apikey: '',
+    apikey: key,
     batchdtxsid: `["DTXSID7020182","DTXSID9020112"]`
   }
   // switch environment
