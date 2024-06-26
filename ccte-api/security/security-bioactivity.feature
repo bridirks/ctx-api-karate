@@ -25,6 +25,6 @@ Feature: Feature file for security check on bioactivity microservice
 
   Scenario: Send wrong api key
     Given path '/bioactivity/data/search/by-dtxsid/DTXSID0021125'
-    And header x-api-key = ${{ secrets.FAKE_KEY }}
+    And header x-api-key = fakekey
     When method GET
     Then status 401
