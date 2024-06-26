@@ -1,6 +1,7 @@
 function() {
     var env = karate.env.split("|")[0]; // get java system property from karate.env 'env'
     var key = karate.env.split("|")[1]; // get karate config property from karate.env 'key'
+    var fake = karate.env.split("|")[2]; // get karate.config property from karate.env 'fake'
     karate.log('karate.env selected environment was:', env);
     karate.configure("ssl", true)
 
@@ -13,7 +14,8 @@ function() {
 	env: env,
     ccte: `https://api-ccte.epa.gov`,
     apikey: key,
-    batchdtxsid: `["DTXSID7020182","DTXSID9020112"]`
+    batchdtxsid: `["DTXSID7020182","DTXSID9020112"]`,
+    fakekey: fake
   }
   // switch environment
   if (env == 'stg')
