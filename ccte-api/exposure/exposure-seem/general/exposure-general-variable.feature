@@ -13,4 +13,4 @@ Feature: Feature file for validating responses of exposure seem general resource
     Given path '/exposure/seem/general/search/by-dtxsid/DTXSID7020182'
     When method GET
     Then status 200 
-    And match response[0] == {dtxsid : '#present', productionVolume : '#present', units : '#present', stockholmConvention : '#present', probabilityDietary : '#present', probabilityResidential : '#present', probabilityPesticde : '#present', probabilityIndustrial : '#present', dataVersion : '#present', importDate : '#present'}
+    And match response == {dtxsid : '#present', productionVolume : '#present', units : '#present', stockholmConvention : '#present', probabilityDietary : '#present', probabilityResidential : '#present', probabilityPesticde : '#present', probabilityIndustrial : '#present', dataVersion : '#present', importDate : '#present'}
