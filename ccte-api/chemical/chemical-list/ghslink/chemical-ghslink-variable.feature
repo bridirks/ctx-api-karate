@@ -1,4 +1,6 @@
-@smoke
+
+@regression
+@variables
 Feature: Feature file for chemical ghslink resource. Finding chemical safety data by dtxsid
 
   Background:
@@ -7,14 +9,8 @@ Feature: Feature file for chemical ghslink resource. Finding chemical safety dat
     * header Content-Type = 'application/json; charset=utf-8'
     * header x-api-key = apikey
 
-  Scenario: Testing the GET method for gshlink chemical safety data
+  Scenario: Validating the response of the GET method for ghslink chemical safety data
     Given path '/chemical/ghslink/to-dtxsid/DTXSID001000314'
     When method GET
     Then status 200
-
-  Scenario: Testing the POST method for chemicals by listname
-    Given url "https://api-ccte-stg.epa.gov/chemical/ghslink/to-dtxsid/"
-    And request '["DTXSID90632430", "DTXSID001000314", "DTXSID001000326"]'
-    When method POST
-    Then status 200
-
+    And match response == {dtxsid: '#present', isSafetyData: '#present', safetyUrl: '#present'}
