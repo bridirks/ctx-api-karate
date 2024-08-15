@@ -54,7 +54,7 @@ These tests are designed to ensure proper acceptance of API keys necessary to ac
 6. Required: Select the desired API from the drop-down menu.<br>
 (if the cors or security test types are selected, the matching option under API Selection needs to be selected) <br>
 7. Select `Run Workflow`<br>
-8. Results will be viewable in an artifact folder after the tests have completed. These results will not be formatted<br>
+8. Results will be viewable in an artifact folder after the tests have completed. These results will not be formatted unless you unzip the artifact folder<br>
 <h3 align="center">Optional - to View Full Dashboard</h3> 
 1. Download the karate project<br>
 2. Download the artifact and extract the contents into the 'target' folder of the downloaded karate project<br>
