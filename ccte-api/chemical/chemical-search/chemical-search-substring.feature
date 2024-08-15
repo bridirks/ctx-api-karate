@@ -9,7 +9,7 @@ Feature: Feature file for chemical search resource (substring)
     * header x-api-key = apikey
 
   Scenario: Testing the GET method for chemical search by substring of chemical name
-    Given path '/chemical/search/contain/razine'
+    Given path '/chemical/search/contain/chloropyrazine'
     When method GET
     Then status 200
 
