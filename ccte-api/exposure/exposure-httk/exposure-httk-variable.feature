@@ -1,5 +1,5 @@
 @regression
-@variables
+@contracts
 Feature: Feature file for validating responses of exposure httk resource
 
   Background:

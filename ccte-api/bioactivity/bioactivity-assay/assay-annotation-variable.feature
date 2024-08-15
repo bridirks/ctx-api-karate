@@ -1,5 +1,5 @@
 @regression
-@variables
+@contracts
 Feature: Feature file to validate responses of bioactivity assay annotation resource
 
   Background:

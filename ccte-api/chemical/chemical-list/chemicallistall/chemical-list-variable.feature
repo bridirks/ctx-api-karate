@@ -1,6 +1,5 @@
-@ignore
 @regression
-@variables
+@contracts
 Feature: Feature file for chemical list resource with projection chemicallistall
 
   Background:
@@ -23,6 +22,7 @@ Feature: Feature file for chemical list resource with projection chemicallistall
     Then status 200
     And match response == {id: '#present', type: '#present', label: '#present', visibility: '#present', longDescription: '#present', chemicalCount: '#present', createdAt: '#present', updatedAt: '#present', listName: '#present', shortDescription: '#present'}
 
+  @ignore
   Scenario: Validating the response of the GET method for public lists by dtsxid (projection = chemicallistall)
     Given path '/chemical/list/search/by-dtxsid/DTXSID7020182'
     And param projection = 'chemicallistall'
