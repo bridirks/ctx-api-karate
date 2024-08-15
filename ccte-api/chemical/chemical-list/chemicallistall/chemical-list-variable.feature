@@ -1,6 +1,5 @@
 @regression
 @contracts
-@list
 Feature: Feature file for chemical list resource with projection chemicallistall
 
   Background:
