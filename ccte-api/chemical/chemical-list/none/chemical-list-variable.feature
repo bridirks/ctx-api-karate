@@ -1,5 +1,5 @@
 @regression
-@variables
+@contracts
 Feature: Feature file for chemical list resource
 
   Background:
