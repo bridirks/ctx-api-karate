@@ -12,4 +12,4 @@ Feature: Feature file for data validation of chemical search resource (substring
     Given path '/chemical/search/contain/nafion'
     When method GET
     Then status 200
-    And match response.dtxid !contains ['DTXSID10785417']
+    And match response.dtxsid !contains ['DTXSID10785417']
