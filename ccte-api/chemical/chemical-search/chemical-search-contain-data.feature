@@ -8,7 +8,7 @@ Feature: Feature file for data validation of chemical search resource (substring
     * header Content-Type = 'application/json; charset=utf-8'
     * header x-api-key = apikey
 
-  Scenario: Ensure that 'contain' endpoint does not incluse results based on inchikey when search term has less than 13 characters
+  Scenario: Ensure that 'contain' endpoint does not include results based on inchikey when search term has less than 13 characters
     Given path '/chemical/search/contain/nafion'
     When method GET
     Then status 200
