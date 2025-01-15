@@ -38,10 +38,9 @@ Feature: Feature file for chemical list resource
     Given path '/chemical/list/chemicals/search/exact/40CFR1164/ammonia'
     When method GET
     Then status 200
-#figure out formatting error
-@ignore
+
   Scenario: Testing the POST method for listnames by dtxsids
     Given path '/chemical/list/chemicals/search/by-dtxsid'
     And request {"dtxsids": ["DTXSID7020182"], "chemicalLists": ["WIKIPEDIA","COA_Summaries","tan_db"]}
-    When method GET
+    When method POST
     Then status 200
