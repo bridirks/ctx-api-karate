@@ -7,7 +7,6 @@ Feature: Feature file for chemical property resource
     * header Content-Type = 'application/json; charset=utf-8'
     * header x-api-key = apikey
 
-  @ignore
   Scenario: Testing the GET method for chemical properties by id and range
     Given path '/chemical/property/search/by-range/density/1.311/1.313'
     When method GET
