@@ -1,5 +1,5 @@
 @smoke
-Feature: Feature file for chemical GHS Link resource
+Feature: Feature file for chemical ghslink resource. Finding chemical safety data by dtxsid
 
   Background:
     * url ccte
@@ -7,14 +7,14 @@ Feature: Feature file for chemical GHS Link resource
     * header Content-Type = 'application/json; charset=utf-8'
     * header x-api-key = apikey
 
-  Scenario: Testing the GET method for chemical GHS Link by dtxsid
-    Given path 'chemical/ghslink/to-dtxsid/DTXSID7020182'
+  Scenario: Testing the GET method for gshlink chemical safety data
+    Given path '/chemical/ghslink/to-dtxsid/DTXSID001000314'
     When method GET
     Then status 200
 
-  Scenario: Testing the POST method for chemical GHS Link by batch dtxsid
-    Given url "https://api-ccte.epa.gov/chemical/ghslink/to-dtxsid/"
-    And request batchdtxsid
+  Scenario: Testing the POST method for chemicals by listname
+    Given url "https://api-ccte-stg.epa.gov/chemical/ghslink/to-dtxsid/"
+    And request '["DTXSID90632430", "DTXSID001000314", "DTXSID001000326"]'
     When method POST
     Then status 200
 
