@@ -11,3 +11,9 @@ Feature: Feature file for chemical synonym
     Given path '/chemical/synonym/search/by-dtxsid/DTXSID7020182'
     When method GET
     Then status 200
+
+  Scenario: Testing the POST method for chemical synonym by batch dtxsid
+    Given url "https://api-ccte.epa.gov/chemical/synonym/search/by-dtxsid/"
+    And request batchdtxsid
+    When method POST
+    Then status 200

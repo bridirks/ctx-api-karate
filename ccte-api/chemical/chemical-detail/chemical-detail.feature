@@ -22,3 +22,58 @@ Feature: Feature file for chemical details resource
     Given path '/chemical/detail/search/by-dtxcid/DTXCID40210'
     When method GET
     Then status 200
+
+  Scenario: Testing the POST method for chemical details by batch dtxcid
+    Given url "https://api-ccte.epa.gov/chemical/detail/search/by-dtxcid/"
+    And request batchdtxcid
+    When method POST
+    Then status 200
+
+  Scenario: Testing the GET method for ALL chemical details
+    Given path 'chemical/all'
+    When method GET
+    Then status 200
+
+#Projection checks
+
+  Scenario: Testing the GET method for chemical details by dtxcid (projection = chemicaldetailall)
+    Given path '/chemical/detail/search/by-dtxcid/DTXCID40210'
+    And param projection = 'chemicaldetailall'
+    When method GET
+    Then status 200
+
+  Scenario: Testing the GET method for chemical details by dtxsid (projection = chemicaldetailstandard)
+    Given path '/chemical/detail/search/by-dtxsid/DTXSID20144773'
+    And param projection = 'chemicaldetailstandard'
+    When method GET
+    Then status 200
+
+  Scenario: Testing the GET method for chemical details by dtxsid (projection = chemicalidentifier)
+    Given path '/chemical/detail/search/by-dtxsid/DTXSID20144773'
+    And param projection = 'chemicalidentifier'
+    When method GET
+    Then status 200
+
+  Scenario: Testing the GET method for chemical details by dtxsid (projection = chemicalstructure)
+    Given path '/chemical/detail/search/by-dtxsid/DTXSID20144773'
+    And param projection = 'chemicalstructure'
+    When method GET
+    Then status 200
+
+  Scenario: Testing the GET method for chemical details by dtxcid (projection = ntatoolkit)
+    Given path '/chemical/detail/search/by-dtxcid/DTXCID40210'
+    And param projection = 'ntatoolkit'
+    When method GET
+    Then status 200
+
+  Scenario: Testing the GET method for chemical details by dtxsid (projection = ccdchemicaldetails) 
+    Given path '/chemical/detail/search/by-dtxsid/DTXSID20144773'
+    And param projection = 'ccdchemicaldetails'
+    When method GET
+    Then status 200
+
+  Scenario: Testing the GET method for chemical details by dtxsid (projection = compact)
+    Given path '/chemical/detail/search/by-dtxsid/DTXSID20144773'
+    And param projection = 'compact'
+    When method GET
+    Then status 200
