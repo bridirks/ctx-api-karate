@@ -12,6 +12,12 @@ Feature: Feature file for bioactivity resource
     When method GET
     Then status 200
 
+  Scenario: Testing the POST method for assay annotation by batch dtxsid
+    Given url "https://api-ccte.epa.gov/bioactivity/assay/search/by-aeid/"
+    And request [111,3032]
+    When method POST
+    Then status 200
+
   Scenario: Testing the POST method to get ALL assay annotation by aeid
     Given url "https://api-ccte.epa.gov/bioactivity/assay/"
     And request batchdtxsid
