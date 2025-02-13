@@ -56,3 +56,8 @@ Feature: Feature file for bioactivity resource
     When method GET
     Then status 200
 
+  Scenario: Testing the GET method for bioactivity data summary by dtxsid
+    Given path '/bioactivity/data/summary/search/by-dtxsid/DTXSID9026974'
+    When method GET
+    Then status 200
+
