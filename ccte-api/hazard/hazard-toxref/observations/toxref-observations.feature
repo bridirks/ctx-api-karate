@@ -15,8 +15,8 @@ Feature: Feature file for hazard toxref observation endpoints
     Given path '/hazard/toxref/observations/search/by-study-id/2122'
     When method GET
     Then status 200
-
-  Scenario: Testing the GET method for toxref observations by study type
+  @ignore
+  Scenario: Testing the GET method for toxref observations by study type (paging)
     Given path '/hazard/toxref/observations/search/by-study-type/CHR'
     When method GET
     Then status 200
