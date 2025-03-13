@@ -21,3 +21,9 @@ Feature: Feature file for exposure functional use resource
     Given path '/exposure/functional-use/category'
     When method GET
     Then status 200
+
+  Scenario: Testing the POST method for functional use resource exposure data by dtxsid
+    Given url "https://ctx-api-dev.ccte.epa.gov/exposure/functional-use/search/by-dtxsid/"
+    And request ["DTXSID7020182","DTXSID9020112"]
+    When method POST
+    Then status 200
