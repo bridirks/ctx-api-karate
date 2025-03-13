@@ -13,8 +13,8 @@ Feature: Feature file for bioactivity resource
     Then status 200
 
   Scenario: Testing the POST method for bioactivity data by batch dtxsid
-    Given url "https://api-ccte.epa.gov/bioactivity/data/search/by-dtxsid/"
-    And request [DTXSID9026974,DTXSID9020112]
+    Given url "https://ctx-api-dev.ccte.epa.gov/bioactivity/data/search/by-dtxsid/"
+    And request ["DTXSID9026974","DTXSID9020112"]
     When method POST
     Then status 200
 
@@ -24,8 +24,8 @@ Feature: Feature file for bioactivity resource
     Then status 200
 
   Scenario: Testing the POST method for bioactivity data by batch m4id
-    Given url "https://api-ccte.epa.gov/bioactivity/data/search/by-m4id/"
-    And request [1135145,394876]
+    Given url "https://ctx-api-dev.ccte.epa.gov/bioactivity/data/search/by-m4id/"
+    And request ["1135145","394876"]
     When method POST
     Then status 200
 
@@ -35,8 +35,8 @@ Feature: Feature file for bioactivity resource
     Then status 200
 
   Scenario: Testing the POST method for bioactivity data by batch aeid
-    Given url "https://api-ccte.epa.gov/bioactivity/data/search/by-aeid/"
-    And request [3032,755]
+    Given url "https://ctx-api-dev.ccte.epa.gov/bioactivity/data/search/by-aeid/"
+    And request ["3032","755"]
     When method POST
     Then status 200
 
@@ -46,8 +46,8 @@ Feature: Feature file for bioactivity resource
     Then status 200
 
   Scenario: Testing the POST method for bioactivity data by batch spid
-    Given url "https://api-ccte.epa.gov/bioactivity/data/search/by-spid/"
-    And request [EPAPLT0232A03,TP0000311A04]
+    Given url "https://ctx-api-dev.ccte.epa.gov/bioactivity/data/search/by-spid/"
+    And request ["EPAPLT0232A03","TP0000311A04"]
     When method POST
     Then status 200
 
