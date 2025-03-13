@@ -16,3 +16,9 @@ Feature: Feature file for exposure product data resource
     Given path '/exposure/product-data/puc'
     When method GET
     Then status 200
+
+  Scenario: Testing the POST method for product data by dtxsids
+    Given url "https://ctx-api-dev.ccte.epa.gov/exposure/product-data/search/by-dtxsid/"
+    And request ["DTXSID7020182","DTXSID9020112"]
+    When method POST
+    Then status 200
