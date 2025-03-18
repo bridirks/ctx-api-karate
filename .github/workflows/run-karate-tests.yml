@@ -41,8 +41,7 @@ on:
         - chemical
         - exposure
         - hazard
-        - cors
-        - security
+
 
 jobs:
 
@@ -61,7 +60,7 @@ jobs:
         distribution: 'oracle'
         
     - name: Run Karate with Java
-      run: java -jar karate-1.4.1.jar -t @${{ inputs.test }} -t ~@ignore -e '${{ inputs.env }} | ${{secrets.API_KEY}} | ${{secrets.FAKE_KEY}} | ${{secrets.CTX_LOCAL_DEV}}' ccte-api/${{ inputs.api-selection }} -o ccte-api/reports/
+      run: java -jar karate-1.4.1.jar -t "@${{ inputs.test }}, ${{ inputs.api-selection }}" -e '${{ inputs.env }} | ${{secrets.API_KEY}} | ${{secrets.FAKE_KEY}} | ${{secrets.CTX_LOCAL_DEV}}' ccte-api -o ccte-api/reports/
  
   result:
     runs-on: th878
