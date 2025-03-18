@@ -44,8 +44,7 @@ on:
         - chemical
         - exposure
         - hazard
-        - cors
-        - security
+
 
 jobs:
 
