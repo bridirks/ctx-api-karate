@@ -18,6 +18,8 @@ on:
         options:
         - prod
         - stg
+        - dev
+        - ctx-local-dev
        test:
         description: 'Test Type'
         required: true
@@ -34,9 +36,10 @@ on:
        api-selection:
         description: 'API Selection (cors/security must match)'             
         required: true
-        default: 'chemical'
+        default: 'all'
         type: choice
         options:
+        - all
         - bioactivity
         - chemical
         - exposure
@@ -60,7 +63,9 @@ jobs:
         distribution: 'oracle'
         
     - name: Run Karate with Java
-      run: java -jar karate-1.4.1.jar -t "@${{ inputs.test }}, ${{ inputs.api-selection }}" -e '${{ inputs.env }} | ${{secrets.API_KEY}} | ${{secrets.FAKE_KEY}} | ${{secrets.CTX_LOCAL_DEV}}' ccte-api -o ccte-api/reports/
+
+      run: java -jar karate-1.4.1.jar -t "@${{ inputs.test }}, $@{{ inputs.api-selection }}" -e '${{ inputs.env }} | ${{secrets.API_KEY}} | ${{secrets.FAKE_KEY}} | ${{secrets.CTX_LOCAL_DEV}}' ccte-api -o ccte-api/reports/
+
  
   result:
     runs-on: th878
