@@ -1,7 +1,7 @@
 @regression
 @bioactivity
 @all
-Feature: Feature file for bioactivity resource
+Feature: Feature file for validating responses of bioactivity data resource
 
   Background:
     * url ctx
