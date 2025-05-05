@@ -1,7 +1,7 @@
 @smoke
 @bioactivity
 @all
-Feature: Feature file for bioactivity resource
+Feature: Feature file for bioactivity data resource
 
   Background:
     * url ctx
