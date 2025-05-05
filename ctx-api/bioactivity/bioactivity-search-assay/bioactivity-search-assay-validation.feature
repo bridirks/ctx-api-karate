@@ -1,7 +1,7 @@
 @regression
 @bioactivity
 @all
-Feature: Feature file for bioactivity Assay Search resources
+Feature: Feature file for validating responses of bioactivity Assay Search resources
 
   Background:
     * url ctx
@@ -14,13 +14,17 @@ Feature: Feature file for bioactivity Assay Search resources
     Given path '/bioactivity/search/start-with/ATG_S'
     When method GET
     Then status 200
-
+    And match response[0] == {id: '#present', searchName: '#present', searchValue: '#present', searchValueDesc: '#present', modifiedValue: '#present'}
+    
   Scenario: Testing the GET method for assay search using exact value
     Given path '/bioactivity/search/equal/ATG_STAT3_CIS'
     When method GET
     Then status 200
-
+    And match response[0] == {id: '#present', searchName: '#present', searchValue: '#present', searchValueDesc: '#present', modifiedValue: '#present'}
+    
   Scenario: Testing the GET method for assay search using substring
     Given path '/bioactivity/search/contain/AT3_CIS'
     When method GET
     Then status 200
+    And match response[0] == {id: '#present', searchName: '#present', searchValue: '#present', searchValueDesc: '#present', modifiedValue: '#present'}
+    
