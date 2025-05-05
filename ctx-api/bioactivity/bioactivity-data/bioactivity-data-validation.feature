@@ -1,6 +1,6 @@
 @regression
-@all
 @bioactivity
+@all
 Feature: Feature file for bioactivity resource
 
   Background:
