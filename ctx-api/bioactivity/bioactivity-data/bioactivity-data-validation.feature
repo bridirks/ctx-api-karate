@@ -1,4 +1,4 @@
-@smoke
+@regression
 @all
 @bioactivity
 Feature: Feature file for bioactivity resource
