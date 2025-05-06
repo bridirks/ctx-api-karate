@@ -17,6 +17,7 @@ function() {
     ctx: `https://api-ccte.epa.gov`,
     apikey: key,
     origin: origin,
+    host: `api-ccte-.epa.gov`,
     batchdtxsid: `["DTXSID7020182","DTXSID9020112"]`,
         mol: `
   Mrv1805 07292016252D          
@@ -71,7 +72,7 @@ M  END
   if (env === 'dev')
   {
     config.ctx = dev;
-    config.origin = hostDev;
+    config.host = hostDev;
   }
 	
     karate.configure('connectTimeout', 60000);
