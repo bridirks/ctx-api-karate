@@ -62,7 +62,9 @@ jobs:
     - name: Describe Karate Run
       if: ${{ always() }}
       run: echo 'This Job is running in ${{ inputs.api }} API on the ${{ inputs.env }} environment.' >> $GITHUB_STEP_SUMMARY
- 
+      run: echo 'Scenarios Passed: 📗' >> $GITHUB_STEP_SUMMARY
+      run: echo 'Scenarios Failed: 📕' >> $GITHUB_STEP_SUMMARY
+      
   result:
     runs-on: ubuntu-latest
     strategy:
