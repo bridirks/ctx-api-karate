@@ -59,7 +59,9 @@ jobs:
         
     - name: Run Karate with Java
       run: java -Dkey=${{secrets.API_KEY}} -Dorigin=${{secrets.ORIGIN}} -Dhost=${{secrets.HOST}} -jar karate-1.4.1.jar -t @${{ inputs.api }} -t @${{ inputs.tag }} -e ${{ inputs.env }} ctx-api -o ctx-api/target/
-    - run: echo 'This Job is running in ${{ inputs.api }} API on the ${{ inputs.env }} environment.' >> $GITHUB_STEP_SUMMARY
+    - name: Describe Karate Run
+      if: ${{ always() }}
+      run: echo 'This Job is running in ${{ inputs.api }} API on the ${{ inputs.env }} environment.' >> $GITHUB_STEP_SUMMARY
  
   result:
     runs-on: ubuntu-latest
