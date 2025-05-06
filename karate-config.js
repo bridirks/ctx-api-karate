@@ -71,7 +71,7 @@ M  END
   if (env === 'dev')
   {
     config.ctx = dev;
-    config.host = hostDev;
+    config.origin = hostDev;
   }
 	
     karate.configure('connectTimeout', 60000);
