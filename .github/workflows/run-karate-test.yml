@@ -63,11 +63,6 @@ jobs:
       if: ${{ always() }}
       run: |
            echo 'This Job is running in ${{ inputs.api }} API on the ${{ inputs.env }} environment.' >> $GITHUB_STEP_SUMMARY
-           summary=$(ctx-api/target/karate-reports/karate-summary-json.txt)
-           pass=$($summary | jq -r '.scenariospassed')
-           fail=$($summary | jq -r '.scenariosfailed')
-           echo 'Scenarios Passed: ${pass}📗' >> $GITHUB_STEP_SUMMARY
-           echo 'Scenarios Failed: ${fail}📕' >> $GITHUB_STEP_SUMMARY
       
   result:
     runs-on: ubuntu-latest
