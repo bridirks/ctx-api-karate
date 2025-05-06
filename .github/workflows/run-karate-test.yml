@@ -19,7 +19,15 @@ on:
         - prod
         - dev
 
-
+       tag:
+        description: 'Environment'
+        required: false
+        default: 'smoke'
+        type: choice
+        options:
+        - smoke
+        - regression
+        
        api:
         description: 'API Selection'             
         required: true
@@ -51,7 +59,7 @@ jobs:
         distribution: 'oracle'
         
     - name: Run Karate with Java
-      run: java -Dkey=${{secrets.API_KEY}} -Dorigin=${{secrets.ORIGIN}} -Ddev=${{secrets.CLD}} -Dhost=${{secrets.HOST}} -DhostDev=${{secrets.HD}} -jar karate-1.4.1.jar -t @${{ inputs.api }} -t @smoke -e ${{ inputs.env }}  ctx-api -o ctx-api/target/
+      run: java -Dkey=${{secrets.API_KEY}} -Dorigin=${{secrets.ORIGIN}} -Ddev=${{secrets.CLD}} -Dhost=${{secrets.HOST}} -DhostDev=${{secrets.HD}} -jar karate-1.4.1.jar -t @${{ inputs.api }} -t @${{ inputs.tag }} -e ${{ inputs.env }}  ctx-api -o ctx-api/target/
     - run: echo 'This Job is running in ${{ inputs.api }} API on the ${{ inputs.env }} environment.' >> $GITHUB_STEP_SUMMARY
  
   result:
@@ -69,7 +77,7 @@ jobs:
       if: ${{ always() }}
       with:
     # Artifact name
-        name: ${{ inputs.api }} Smoke Result ${{ steps.date.outputs.date }}
+        name: ${{ inputs.api }} @${{ inputs.tag }} result ${{ steps.date.outputs.date }}
     # A file, directory or wildcard pattern that describes what to upload
         path: | 
          ctx-api/target/karate-reports/karate-summary-json.txt
