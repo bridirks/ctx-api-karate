@@ -78,11 +78,7 @@ jobs:
     # Artifact name
         name: ${{ inputs.api }} @${{ inputs.tag }} result ${{ steps.date.outputs.date }}
     # A file, directory or wildcard pattern that describes what to upload
-        path: | 
-         ctx-api/target/karate-reports/karate-summary-json.txt
-         ctx-api/target/karate-reports/res
-         ctx-api/target/karate-reports/karate-summary.html
-         ctx-api/target/karate-reports/karate-labs-logo-ring.svg
+        path: ctx-api/target/
 
   clean-up:
    runs-on: ubuntu-latest
