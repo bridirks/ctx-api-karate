@@ -50,7 +50,7 @@ jobs:
         distribution: 'oracle'
         
     - name: Run Karate with Java
-      run: java -Dkey=${{secrets.API_KEY}} -Dorigin=${{secrets.ORIGIN}} -Ddomain=${{secrets.DOMAIN}} -jar karate-1.4.1.jar -t @${{ inputs.api }} -t @smoke -e prod  ctx-api -o ctx-api/target/
+      run: java -Dkey=${{secrets.API_KEY}} -Dorigin=${{secrets.ORIGIN}} -Ddev=${{secrets.CLD}} -Ddomain=${{secrets.DOMAIN}} -DhostDev=${{secrets.HD}} -jar karate-1.4.1.jar -t @${{ inputs.api }} -t @smoke -e prod  ctx-api -o ctx-api/target/
     - run: echo 'This Job is running in ${{ inputs.api }} API on the ${{ inputs.env }} environment.' >> $GITHUB_STEP_SUMMARY
  
   result:
