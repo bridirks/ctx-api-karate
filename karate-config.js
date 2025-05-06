@@ -1,8 +1,10 @@
 function() {
     var env = karate.env // get java system property from karate.env 'env'
     var key = karate.properties['key'] // get karate config property from karate.env 'key'
-    var origin = karate.properties['origin'].trim() // get karate.config property from karate.env 'localDev'
-    var domain = karate.properties['domain'].trim() // get karate.config property from karate.env 'localStg'
+    var origin = karate.properties['origin'].trim() // get karate.config property from karate.env 'origin'
+    var host = karate.properties['host'].trim() // get karate.config property from karate.env 'host'
+    var dev = karate.properties['dev'].trim() // get karate.config property from karate.env 'dev'
+    var hostDev = karate.properties['hostDev'].trim() // get karate.config property from karate.env 'hostDev'
     karate.log('karate.env selected environment was:', env);
     
     if (!env) {
@@ -65,6 +67,13 @@ M  V30 END CTAB
 M  END
 `,
   }
+  // switch environment
+  if (env === 'dev')
+  {
+    config.ctx = dev;
+    config.host = hostDev;
+  }
+	
     karate.configure('connectTimeout', 60000);
     karate.configure('readTimeout', 60000);
 
