@@ -97,13 +97,13 @@ Feature: Feature file for validating responses of bioactivity assay annotation r
     And match response[0] == {aeid: '#present', preferredName: '#present', dtxsid: '#present', s2id: '#present', casn: '#present', bmad: '#present', hitc: '#present', coff: '#present', endpointName: '#present', maxMedVal: '#present'}
 
   Scenario: Testing the GET method for getting all assay annotations
-    Given path '/bioactivity/assay/'
+    Given url ctx + "/bioactivity/assay/"
     When method GET
     Then status 200
     And match response[0] == {aeid: '#present', assayName: '#present', assayComponentName: '#present', assayComponentEndpointName: '#present', assayComponentEndpointDesc: '#present', assayFunctionType: '#present', normalizedDataType: '#present', burstAssay: '#present', keyPositiveControl: '#present', signalDirection: '#present', intendedTargetType: '#present', intendedTargetTypeSub: '#present', intendedTargetFamily: '#present', intendedTargetFamilySub: '#present', cellViabilityAssay: '#present', acid": '#present', assayComponentDesc: '#present', assayComponentTargetDesc: '#present', parameterReadoutType: '#present', assayDesignType: '#present', assayDesignTypeSub: '#present', biologicalProcessTarget: '#present', detectionTechnologyType: '#present', detectionTechnologyTypeSub: '#present', detectionTechnology: '#present', keyAssayReagentType: '#present', keyAssayReagent: '#present', technologicalTargetType: '#present', technologicalTargetTypeSub: '#present', aid: '#present', assayDesc: '#present', timepointHr: '#present', organismId: '#present', organism: '#present', tissue: '#present', cellFormat: '#present', cellFreeComponentSource: '#present', cellShortName: '#present', cellGrowthMode: '#present', assayFootprint: '#present', assayFormatType: '#present', assayFormatTypeSub: '#present', contentReadoutType: '#present', dilutionSolvent: '#present', dilutionSolventPercentMax: '#present', asid: '#present', assaySourceName: '#present', assaySourceLongName: '#present', assaySourceDesc: '#present', gene: '#present', assayList: '#present', citations: '#present'}
 
   Scenario: Testing the GET method for getting all assay annotations (projection = ccd-assay-list)
-    Given path '/bioactivity/assay/'
+    Given url ctx + "/bioactivity/assay/"
     And param projection = 'ccd-assay-list'
     When method GET
     Then status 200
