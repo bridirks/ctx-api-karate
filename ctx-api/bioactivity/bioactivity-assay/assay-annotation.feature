@@ -91,12 +91,12 @@ Feature: Feature file for bioactivity assay resources
     Then status 200
 
   Scenario: Testing the GET method for getting all assay annotations
-    Given path '/bioactivity/assay/'
+    Given url ctx + "/bioactivity/assay/"
     When method GET
     Then status 200
 
   Scenario: Testing the GET method for getting all assay annotations (projection = ccd-assay-list)
-    Given path '/bioactivity/assay/'
+    Given url ctx + "/bioactivity/assay/"
     And param projection = 'ccd-assay-list'
     When method GET
     Then status 200
