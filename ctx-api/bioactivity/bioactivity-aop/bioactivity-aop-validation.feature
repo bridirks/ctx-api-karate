@@ -1,5 +1,4 @@
 @regression
-@contract
 @bioactivity
 @all
 Feature: Feature file for validating responses of bioactivity Toxcast AOP resources
