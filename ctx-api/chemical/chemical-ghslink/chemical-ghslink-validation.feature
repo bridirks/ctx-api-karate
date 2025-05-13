@@ -1,7 +1,7 @@
 @regression
 @all
 @chemical
-Feature: Feature file for chemical ghslink resource. Finding chemical safety data by dtxsid
+Feature: Feature file for validating the response of the chemical ghslink resource. Finding chemical safety data by dtxsid
 
   Background:
     * url ctx
@@ -13,5 +13,12 @@ Feature: Feature file for chemical ghslink resource. Finding chemical safety dat
   Scenario: Validating the response of the GET method for ghslink chemical safety data
     Given path '/chemical/ghslink/to-dtxsid/DTXSID001000314'
     When method GET
+    Then status 200
+    And match response == {dtxsid: '#present', isSafetyData: '#present', safetyUrl: '#present'}
+    
+  Scenario: Validating the response of the POST method for ghslink chemical safety data
+    Given url ctx + "/chemical/ghslink/to-dtxsid/"
+    And request batchdtxsid
+    When method POST
     Then status 200
     And match response == {dtxsid: '#present', isSafetyData: '#present', safetyUrl: '#present'}
