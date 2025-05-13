@@ -1,6 +1,6 @@
 @smoke
 @html
-Feature: Feature file to access hazard api
+Feature: Feature file to access exposure api
 
   Background:
     * url ctx
