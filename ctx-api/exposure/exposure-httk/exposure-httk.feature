@@ -5,6 +5,7 @@ Feature: Feature file for exposure httk data
 
   Background:
     * url ctx
+    * header Origin = origin
     * header Accept = 'application/json' 
     * header Content-Type = 'application/json; charset=utf-8'
     * header x-api-key = apikey
