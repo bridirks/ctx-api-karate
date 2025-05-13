@@ -70,10 +70,3 @@ Feature: Feature file for bioactivity data resource
     Given path '/bioactivity/data/summary/search/by-dtxsid/DTXSID9026974'
     When method GET
     Then status 200
-
-  @ignore
-  Scenario: Testing the POST method for bioactivity data summary by batch
-    Given url ctx + "/bioactivity/data/summary/batchsearch/"
-    And request '1210314470\nEPAPLT0232A03\nTP0000075F10\nPhenobarbital\nEPAPLT0237A04'
-    When method POST
-    Then status 200
