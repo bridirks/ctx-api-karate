@@ -5,7 +5,8 @@
 Feature: Feature file for validating responses of bioactivity Toxcast AOP resources
 
   Background:
-    * url ccte
+    * url ctx
+    * header Origin = origin
     * header Accept = 'application/json' 
     * header Content-Type = 'application/json; charset=utf-8'
     * header x-api-key = apikey
