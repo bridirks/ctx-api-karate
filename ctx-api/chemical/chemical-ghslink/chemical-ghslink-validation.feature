@@ -1,6 +1,6 @@
 @regression
-@all
 @chemical
+@all
 Feature: Feature file for validating the response of the chemical ghslink resource. Finding chemical safety data by dtxsid
 
   Background:
